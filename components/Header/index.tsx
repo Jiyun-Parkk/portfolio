@@ -3,10 +3,11 @@ import { Button } from '@mui/material'
 import { NextPage } from 'next'
 import { useDispatch } from 'react-redux'
 import { theme } from 'store/modules'
-import styled from 'styled-components'
 import { useAppSelector } from 'hooks'
+import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Container = styled.header`
   padding: 20px;
@@ -24,6 +25,9 @@ const Container = styled.header`
       li {
         cursor: pointer;
         font-weight: bold;
+        &.active {
+          color: ${(props) => props.theme.text.point};
+        }
       }
     }
   }
@@ -37,6 +41,7 @@ const Container = styled.header`
 `
 
 export const Header: NextPage = () => {
+  const router = useRouter()
   const isDark = useAppSelector((state) => state.theme.value)
   const dispatch = useDispatch()
   return (
@@ -51,11 +56,11 @@ export const Header: NextPage = () => {
         />
         <nav>
           <ul>
-            <li>
+            <li className={router.pathname === '/' ? 'active' : ''}>
               <Link href='/'>About</Link>
             </li>
-            <li>
-              <Link href='/'>Contact</Link>
+            <li className={router.pathname === '/contact' ? 'active' : ''}>
+              <Link href='/contact'>Contact</Link>
             </li>
           </ul>
         </nav>

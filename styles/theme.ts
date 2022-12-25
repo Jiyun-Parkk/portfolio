@@ -12,11 +12,11 @@ export const dark: DefaultTheme = {
 }
 export const light: DefaultTheme = {
   background: {
-    basic: '#F5EBE0',
+    basic: '#fff',
     lighter: '#FEFCF3',
   },
   text: {
     basic: '#263159',
-    point: '#4AFDD8',
+    point: '#FF6E31',
   },
 }
