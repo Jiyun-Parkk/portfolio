@@ -17,28 +17,28 @@ const Container = styled(motion.div)<{ isdark: string }>`
   flex: 1;
   line-height: 2;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  gap: 30px;
-  .modal-close-btn {
-    color: #fff;
-    width: 50px;
-    height: 50px;
-    svg {
-      width: 50px;
-      height: 50px;
-    }
-  }
+
   .box {
     margin: 0 auto;
     width: 60%;
     border-radius: 20px;
     background-color: ${(props) => props.theme.background.lighter};
-    padding: 30px;
+    padding: 20px;
     height: 500px;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .modal-close-btn {
+      place-self: flex-end;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
     &::-webkit-scrollbar {
       display: none;
     }
@@ -58,7 +58,7 @@ const Container = styled(motion.div)<{ isdark: string }>`
     font-weight: bolder;
     text-shadow: -2px 0px 0 darkgray;
     &.work-title {
-      font-size: 25px;
+      font-size: 30px;
       font-weight: bolder;
       padding-bottom: 30px;
       border-bottom: 1px solid
@@ -69,7 +69,6 @@ const Container = styled(motion.div)<{ isdark: string }>`
     }
   }
   .work-content-box {
-    margin: 30px 0;
     .source-box {
       margin-top: 20px;
       display: flex;
@@ -107,14 +106,14 @@ const WorkModal = ({ title }: ModalProps) => {
 
   return (
     <Container isdark={isDark.toString()}>
-      <Button type='button' className='modal-close-btn'>
-        <HighlightOffOutlined />
-      </Button>
       <motion.div
         className='box'
         layoutId={title}
         transition={{ ease: 'linear', duration: 0.2 }}
       >
+        <Button type='button' className='modal-close-btn'>
+          <HighlightOffOutlined />
+        </Button>
         <h3 className='work-title'>{title.replace('-', ' ')}</h3>
         <div className='work-content-box'>
           <h4>프로젝트 내용</h4>
