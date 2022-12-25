@@ -59,6 +59,8 @@ const WorkList = styled(motion.li)<{ thumb: string }>`
     flex: 1;
     font-weight: bolder;
     text-align: center;
+    color: #fff;
+    text-shadow: -2px 0 0 ${(props) => props.theme.text.point};
   }
 `
 const Overlay = styled(motion.div)`
@@ -96,13 +98,12 @@ export const Works = () => {
 
   return (
     <Container isdark={isDark}>
-      <h2 data-aos='fade-up'>Works</h2>
+      <h2 data-aos='flip-up'>Works</h2>
       <motion.ul className='about__works-container'>
         {workList.map((work, idx) => (
           <WorkList
             key={idx}
             thumb={work.thumb}
-            data-aos={idx % 2 === 0 ? 'fade-right' : 'fade-left'}
             onClick={() => {
               setWorkName(work.title)
               dispatch(modal.isOpen(true))

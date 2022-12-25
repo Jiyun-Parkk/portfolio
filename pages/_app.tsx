@@ -19,9 +19,11 @@ function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     gsap.registerPlugin(CSSPlugin)
     AOS.init({
-      offset: 100,
-      duration: 1000,
+      offset: 120,
+      duration: 500,
+      easing: 'linear',
     })
+    AOS.refresh()
   }, [])
   return (
     <>
