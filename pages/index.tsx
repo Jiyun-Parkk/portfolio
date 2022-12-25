@@ -39,7 +39,7 @@ const Home = () => {
             src='/static/woman.svg'
             width={500}
             height={500}
-            alt='coding womant'
+            alt='coding woman'
             priority
           />
         </div>
