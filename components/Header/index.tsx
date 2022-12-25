@@ -1,16 +1,16 @@
 import { DarkMode, LightMode } from '@mui/icons-material'
 import { Button } from '@mui/material'
 import { NextPage } from 'next'
-import { useDispatch } from 'react-redux'
 import { theme } from 'store/modules'
-import { useAppSelector } from 'hooks'
+import { useAppDispatch, useAppSelector } from 'hooks'
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
-const Container = styled.header<{ scrollY: number; isDark: boolean }>`
+const Container = styled.header<{ scrollY: number; isdark: boolean }>`
   position: fixed;
   z-index: 10;
   width: 100%;
@@ -22,7 +22,7 @@ const Container = styled.header<{ scrollY: number; isDark: boolean }>`
   transition: background 0.5s;
   &.active {
     background: ${(props) =>
-      props.isDark ? 'rgba(0, 0, 0, 0.4)' : 'rgba(220, 220, 220, 0.4)'};
+      props.isdark ? 'rgba(0, 0, 0, 0.4)' : 'rgba(220, 220, 220, 0.4)'};
   }
   nav {
     padding-left: 20px;
@@ -31,10 +31,21 @@ const Container = styled.header<{ scrollY: number; isDark: boolean }>`
       display: flex;
       gap: 30px;
       li {
+        position: relative;
         cursor: pointer;
         font-weight: bold;
         &.active {
           color: ${(props) => props.theme.text.point};
+        }
+        .circle {
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          display: inline-block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: ${(props) => props.theme.text.point};
         }
       }
     }
@@ -51,7 +62,7 @@ const Container = styled.header<{ scrollY: number; isDark: boolean }>`
 export const Header: NextPage = () => {
   const router = useRouter()
   const isDark = useAppSelector((state) => state.theme.value)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -62,7 +73,7 @@ export const Header: NextPage = () => {
   return (
     <>
       <Container
-        isDark={isDark}
+        isdark={isDark}
         scrollY={scrollY}
         className={scrollY === 0 ? '' : 'active'}
       >
@@ -77,9 +88,15 @@ export const Header: NextPage = () => {
           <ul>
             <li className={router.pathname === '/' ? 'active' : ''}>
               <Link href='/'>About</Link>
+              {router.pathname === '/' && (
+                <motion.span className='circle' layoutId='circle'></motion.span>
+              )}
             </li>
             <li className={router.pathname === '/contact' ? 'active' : ''}>
               <Link href='/contact'>Contact</Link>
+              {router.pathname === '/contact' && (
+                <motion.span className='circle' layoutId='circle'></motion.span>
+              )}
             </li>
           </ul>
         </nav>

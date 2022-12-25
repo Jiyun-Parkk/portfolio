@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<{ isOpen: boolean }>`
 html,
 body,
 div,
@@ -88,6 +88,8 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
+
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -101,6 +103,7 @@ hgroup,
 menu,
 nav,
 section {
+  box-sizing: border-box;
   display: block;
 }
 body {
@@ -111,7 +114,11 @@ body,html{
 	font-size:16px;
   overflow-x: hidden;
   background: ${(props) => props.theme.background.lighter};
-  color: ${(props) => props.theme.text.basic}
+  color: ${(props) => props.theme.text.basic};
+  overflow: ${(props) => (props.isOpen ? 'hidden' : 'auto')}
+}
+body::-webkit-scrollbar {
+  display:none;
 }
 ol,
 ul {

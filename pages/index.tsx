@@ -32,7 +32,7 @@ const Home = () => {
     <>
       <SEO />
       {/* 첫번째 섹션 */}
-      <about.Intro isDark={isDark}>
+      <about.Intro isdark={isDark}>
         <div className='about__intro-illust'>
           <Image
             data-aos='fade-up'
@@ -50,7 +50,7 @@ const Home = () => {
       </about.Intro>
 
       {/* 두번째 섹션 */}
-      <about.InfoBox isDark={isDark} className='about__info'>
+      <about.InfoBox isdark={isDark} className='about__info'>
         <Timelines />
         <Stacks />
       </about.InfoBox>

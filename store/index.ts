@@ -6,12 +6,12 @@ import {
   combineReducers,
 } from '@reduxjs/toolkit'
 import { createWrapper, HYDRATE } from 'next-redux-wrapper'
-import { theme } from './modules'
+import { modal, theme } from './modules'
 import logger from 'redux-logger'
-import { Reducer } from 'react'
 
 export interface ReducerState {
   theme: theme.StateType
+  modal: modal.StateType
 }
 
 const rootReducer = (
@@ -27,6 +27,7 @@ const rootReducer = (
     default: {
       const combinedReducer = combineReducers({
         theme: theme.reducer,
+        modal: modal.reducer,
         // [couterSlice.name]: couterSlice.reducer,
       })
       return combinedReducer(state, action)

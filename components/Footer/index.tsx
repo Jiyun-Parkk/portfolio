@@ -6,12 +6,12 @@ import {
   LocalCafeTwoTone,
 } from '@mui/icons-material'
 
-const Container = styled.footer<{ isDark: boolean }>`
+const Container = styled.footer<{ isdark: boolean }>`
   width: 100%;
   padding: 30px;
   border-top: 1px solid
     ${(props) =>
-      props.isDark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
+      props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,14 +44,14 @@ const Container = styled.footer<{ isDark: boolean }>`
     gap: 10px;
     font-size: 0.8rem;
     color: ${(props) =>
-      props.isDark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.8)'};
+      props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.8)'};
   }
 `
 
 const Footer = () => {
   const isDark = useAppSelector((state) => state.theme.value)
   return (
-    <Container isDark={isDark}>
+    <Container isdark={isDark}>
       <div className='footer__links'>
         <a href='https://github.com/jiyun-par' rel='noreferrer' target='_blank'>
           <GitHub />

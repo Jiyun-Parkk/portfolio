@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-export const Intro = styled.section<{ isDark: boolean }>`
+export const Intro = styled.section<{ isdark: boolean }>`
   height: 100vh;
   margin: 0 20px;
   padding: 0px 30px;
   border-bottom: 1px solid
     ${(props) =>
-      props.isDark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
+      props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +15,7 @@ export const Intro = styled.section<{ isDark: boolean }>`
 
   .about__intro-illust {
     background: ${(props) =>
-      props.isDark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
+      props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
     width: 500px;
     border-radius: 100%;
     aspect-ratio: 1;
@@ -40,14 +40,14 @@ export const Intro = styled.section<{ isDark: boolean }>`
   }
 `
 
-export const InfoBox = styled.section<{ isDark: boolean }>`
+export const InfoBox = styled.section<{ isdark: boolean }>`
   margin: 0 20px;
   padding: 100px 0;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid
     ${(props) =>
-      props.isDark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
+      props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
   gap: 60px;
   h2 {
     color: ${(props) => props.theme.text.point};

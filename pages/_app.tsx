@@ -10,20 +10,23 @@ import { CSSPlugin } from 'gsap/CSSPlugin'
 import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { useAppSelector } from 'hooks'
 
 function App({ Component, pageProps }: AppProps) {
-  const isDark = useSelector(({ theme }: { theme: any }) => theme.value)
+  const isDark = useAppSelector((state) => state.theme.value)
+  const isModalOpen = useAppSelector((state) => state.modal.value)
+
   useEffect(() => {
     gsap.registerPlugin(CSSPlugin)
     AOS.init({
-      offset: 120,
+      offset: 100,
       duration: 1000,
     })
   }, [])
   return (
     <>
       <ThemeProvider theme={isDark ? dark : light}>
-        <GlobalStyle />
+        <GlobalStyle isOpen={isModalOpen} />
         <Layout>
           <Component {...pageProps} />
         </Layout>

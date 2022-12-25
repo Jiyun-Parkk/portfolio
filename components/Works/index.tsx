@@ -1,7 +1,11 @@
 import styled from 'styled-components'
-import { useAppSelector } from 'hooks'
+import { useAppDispatch, useAppSelector } from 'hooks'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
+import { modal } from 'store/modules'
+import WorkModal from 'components/WorkModal'
 
-const Container = styled.section<{ isDark: boolean }>`
+const Container = styled.section<{ isdark: boolean }>`
   padding: 100px 20px;
   h2 {
     padding: 50px 0;
@@ -13,28 +17,11 @@ const Container = styled.section<{ isDark: boolean }>`
     text-shadow: -2px 0px 0 darkgray;
     text-align: center;
   }
-  ul {
+  .about__works-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
-    li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      justify-items: center;
-      width: 200px;
-      height: 200px;
-      background: ${(props) =>
-        props.isDark ? 'rgba(0, 0, 0, 0.4)' : 'rgba(220, 220, 220, 0.7)'};
-      border-radius: 20px;
-      cursor: pointer;
-      h3 {
-        flex: 1;
-        font-weight: bolder;
-        text-align: center;
-      }
-    }
 
     @media (max-width: 1200px) {
       flex-direction: column;
@@ -45,20 +32,105 @@ const Container = styled.section<{ isDark: boolean }>`
   }
 `
 
+const WorkList = styled(motion.li)<{ thumb: string }>`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  width: 200px;
+  height: 200px;
+  background: ${(props) => `url(${props.thumb}) no-repeat center / cover`};
+  border-radius: 20px;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    content: '';
+    display: block;
+  }
+  h3 {
+    z-index: 10;
+    font-size: 1.5rem;
+    flex: 1;
+    font-weight: bolder;
+    text-align: center;
+  }
+`
+const Overlay = styled(motion.div)`
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+`
+const dimVariant = {
+  hidden: { backgroundColor: 'rgba(0, 0, 0, 0)' },
+  visible: { backgroundColor: 'rgba(0, 0, 0, 0.5)' },
+  exit: {
+    backgroundColor: 'rgba(0, 0, 0, 0)',
+    transition: {
+      ease: 'linear',
+      duration: 0.5,
+    },
+  },
+}
+
 export const Works = () => {
-  const workList = ['Coin-Tracker', 'Devops-Blog', 'Portfolio', 'Oz-Traning']
+  const [workName, setWorkName] = useState('')
+  const workList = [
+    { title: 'Coin-Tracker', thumb: '/static/cointracker.png' },
+    { title: 'Portfolio', thumb: '/static/portfolio.png' },
+    { title: 'Oz-Training', thumb: '/static/oztraining.png' },
+  ]
   const isDark = useAppSelector((state) => state.theme.value)
+  const dispatch = useAppDispatch()
 
   return (
-    <Container isDark={isDark}>
+    <Container isdark={isDark}>
       <h2 data-aos='fade-up'>Works</h2>
-      <ul>
+      <motion.ul className='about__works-container'>
         {workList.map((work, idx) => (
-          <li key={idx} data-aos={idx % 2 === 0 ? 'fade-right' : 'fade-left'}>
-            <h3>{work.replace('-', ' ')}</h3>
-          </li>
+          <WorkList
+            key={idx}
+            thumb={work.thumb}
+            data-aos={idx % 2 === 0 ? 'fade-right' : 'fade-left'}
+            onClick={() => {
+              setWorkName(work.title)
+              dispatch(modal.isOpen(true))
+            }}
+            transition={{ ease: 'linear', duration: 0.2 }}
+            layoutId={work.title}
+          >
+            <h3>{work.title.replace('-', ' ')}</h3>
+          </WorkList>
         ))}
-      </ul>
+      </motion.ul>
+      <AnimatePresence>
+        {workName ? (
+          <Overlay
+            className='dim'
+            variants={dimVariant}
+            initial='hidden'
+            animate='visible'
+            exit='exit'
+            onClick={() => {
+              setWorkName('')
+              dispatch(dispatch(modal.isOpen(false)))
+            }}
+          >
+            <WorkModal title={workName} />
+          </Overlay>
+        ) : null}
+      </AnimatePresence>
     </Container>
   )
 }
