@@ -1,24 +1,43 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useAppSelector } from 'hooks'
-import { GitHub, LinkOutlined, RateReview } from '@mui/icons-material'
+import {
+  HighlightOffOutlined,
+  GitHub,
+  LinkOutlined,
+  RateReview,
+} from '@mui/icons-material'
 import workContents from './data'
-import { useEffect } from 'react'
-import { duration } from '@mui/material'
+import { Button } from '@mui/material'
 
 interface ModalProps {
   title: string
 }
-const Container = styled(motion.div)<{ isdark: boolean }>`
+const Container = styled(motion.div)<{ isdark: string }>`
   flex: 1;
   line-height: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 30px;
+  .modal-close-btn {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+  }
   .box {
     margin: 0 auto;
-    width: 40%;
+    width: 60%;
     border-radius: 20px;
     background-color: ${(props) => props.theme.background.lighter};
     padding: 30px;
-    height: auto;
+    height: 500px;
     overflow: scroll;
     &::-webkit-scrollbar {
       display: none;
@@ -27,11 +46,6 @@ const Container = styled(motion.div)<{ isdark: boolean }>`
   @media (max-width: 750px) {
     .box {
       width: 90%;
-    }
-  }
-  @media (max-width: 1200px) {
-    .box {
-      width: 80%;
     }
   }
 
@@ -49,7 +63,9 @@ const Container = styled(motion.div)<{ isdark: boolean }>`
       padding-bottom: 30px;
       border-bottom: 1px solid
         ${(props) =>
-          props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
+          props.isdark === 'true'
+            ? 'rgba(255, 255, 255, 0.2)'
+            : ' rgba(0, 0, 0, 0.3)'};
     }
   }
   .work-content-box {
@@ -90,7 +106,10 @@ const WorkModal = ({ title }: ModalProps) => {
   }
 
   return (
-    <Container isdark={isDark}>
+    <Container isdark={isDark.toString()}>
+      <Button type='button' className='modal-close-btn'>
+        <HighlightOffOutlined />
+      </Button>
       <motion.div
         className='box'
         layoutId={title}
