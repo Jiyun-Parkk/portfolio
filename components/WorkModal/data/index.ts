@@ -61,7 +61,7 @@ const workContents: WorkContentType = {
     ],
     source: {
       git: 'https://github.com/jiyun-par/portfolio',
-      link: '',
+      link: 'june-portfolio.vercel.app',
       notion:
         'https://oz-training.notion.site/22d39bd0360940d3bcddd177cbd3141d',
     },

@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 개인 포트폴리오 사이트
 
-## Getting Started
+개인 작업물들이 정리되어 있는 포트폴리오 입니다.
 
-First, run the development server:
+## 사용 기술
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<img src ="https://img.shields.io/badge/react-1572B6.svg?&style=for-the-badge&logo=React&logoColor=white" align="center"/>
+<img src ="https://img.shields.io/badge/typescript-1572B6.svg?&style=for-the-badge&logo=typescript&logoColor=white" align="center"/>
+<img src ="https://img.shields.io/badge/nextjs-1572B6.svg?&style=for-the-badge&logo=next.js&logoColor=white" align="center"/>
+<img src ="https://img.shields.io/badge/styled_components-1572B6.svg?&style=for-the-badge&logo=styled-components&logoColor=white" align="center"/>
+<img src ="https://img.shields.io/badge/framer_motion-1572B6.svg?&style=for-the-badge&logo=framer-motion&logoColor=white" align="center"/>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Point
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    1. styled-components 라이브러리로 Dark / Light 모드 구현
+    2.  meterial-ui로 감각적인 디자인
+    3. NextJS / Typescript 병행 사용
+    4. Redux로 전역 상태 관리
+    5. Framer-motion 활용하여 모션 적용
+    6. Redux Selector, Dispatch custom hook 생성으로 편리하게 호출
