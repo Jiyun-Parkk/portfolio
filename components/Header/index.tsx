@@ -8,14 +8,22 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
-const Container = styled.header`
-  padding: 20px;
-  position: relative;
+const Container = styled.header<{ scrollY: number; isDark: boolean }>`
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  padding: 10px 0px;
   display: flex;
   align-items: center;
   justify-items: center;
   justify-content: space-evenly;
+  transition: background 0.5s;
+  &.active {
+    background: ${(props) =>
+      props.isDark ? 'rgba(0, 0, 0, 0.4)' : 'rgba(220, 220, 220, 0.4)'};
+  }
   nav {
     padding-left: 20px;
     flex: 1;
@@ -44,9 +52,20 @@ export const Header: NextPage = () => {
   const router = useRouter()
   const isDark = useAppSelector((state) => state.theme.value)
   const dispatch = useDispatch()
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setScrollY(window.scrollY)
+    })
+  }, [scrollY])
   return (
     <>
-      <Container>
+      <Container
+        isDark={isDark}
+        scrollY={scrollY}
+        className={scrollY === 0 ? '' : 'active'}
+      >
         <Image
           src={isDark ? '/static/logo-white.png' : '/static/logo-black.png'}
           width={100}

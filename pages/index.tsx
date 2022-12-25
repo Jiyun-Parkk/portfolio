@@ -1,12 +1,38 @@
-import Head from 'next/head'
+import { useAppSelector } from 'hooks'
+import Image from 'next/image'
+import { SEO, Stacks, Timelines, Works } from 'components'
+import { about } from 'styles'
 
 const Home = () => {
+  const isDark = useAppSelector((state) => state.theme.value)
+
   return (
     <>
-      <Head>
-        <link rel='shortcut icon' href='/static/favicon.ico' />
-        <title>프론트엔드 박지윤의 포트폴리오</title>
-      </Head>
+      <SEO />
+      {/* 첫번째 섹션 */}
+      <about.Intro isDark={isDark}>
+        <div className='about__intro-illust'>
+          <Image
+            src='/static/woman.svg'
+            width={500}
+            height={500}
+            alt='coding womant'
+          />
+        </div>
+        <div className='about__intro-greeting'>
+          <h1>박지윤</h1>
+          <p>Frontend Developer</p>
+        </div>
+      </about.Intro>
+
+      {/* 두번째 섹션 */}
+      <about.InfoBox isDark={isDark}>
+        <Timelines />
+        <Stacks />
+      </about.InfoBox>
+
+      {/* 세번째 섹션 */}
+      <Works />
     </>
   )
 }

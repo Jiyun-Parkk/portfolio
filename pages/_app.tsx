@@ -13,8 +13,9 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <ThemeProvider theme={isDark ? dark : light}>
         <GlobalStyle />
-        <Header />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   )

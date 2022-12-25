@@ -1,2 +1,6 @@
 export * from './Header'
 export * from './Layout'
+export * from './Timeline'
+export * from './Stacks'
+export * from './Works'
+export * from './SEO'

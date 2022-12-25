@@ -1,17 +1,22 @@
+import Footer from 'components/Footer'
 import { Header } from 'components/Header'
-import gsap from 'gsap'
-import { ReactElement, useEffect } from 'react'
+import { ReactElement } from 'react'
 import styled from 'styled-components'
 
 interface LayoutProps {
   children: ReactElement
 }
 
+const Container = styled.main`
+  padding-top: 110px;
+`
+
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
-      <section>{children}</section>
+      <Container>{children}</Container>
+      <Footer />
     </>
   )
 }
