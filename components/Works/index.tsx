@@ -103,7 +103,6 @@ export const Works = () => {
         {workList.map((work, idx) => (
           <WorkList
             key={idx}
-            data-aos='flip-up'
             thumb={work.thumb}
             onClick={() => {
               setWorkName(work.title)

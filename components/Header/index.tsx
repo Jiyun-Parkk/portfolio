@@ -14,7 +14,7 @@ const Container = styled.header<{ scrollY: number; isdark: boolean }>`
   position: fixed;
   z-index: 10;
   width: 100%;
-  padding: 10px 0px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-items: center;
@@ -23,6 +23,13 @@ const Container = styled.header<{ scrollY: number; isdark: boolean }>`
   &.active {
     background: ${(props) =>
       props.isdark ? 'rgba(0, 0, 0, 0.4)' : 'rgba(220, 220, 220, 0.4)'};
+  }
+
+  @media (max-width: 750px) {
+    img {
+      width: 80px;
+      height: 50px;
+    }
   }
   nav {
     padding-left: 20px;
@@ -77,13 +84,15 @@ export const Header: NextPage = () => {
         scrollY={scrollY}
         className={scrollY === 0 ? '' : 'active'}
       >
-        <Image
-          src={isDark ? '/static/logo-white.png' : '/static/logo-black.png'}
-          width={100}
-          height={65}
-          alt='logo'
-          priority
-        />
+        <Link href='/'>
+          <Image
+            src={isDark ? '/static/logo-white.png' : '/static/logo-black.png'}
+            width={100}
+            height={65}
+            alt='logo'
+            priority
+          />
+        </Link>
         <nav>
           <ul>
             <li className={router.pathname === '/' ? 'active' : ''}>

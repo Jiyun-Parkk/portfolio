@@ -12,7 +12,8 @@ const Container = styled.section<{ isdark: boolean }>`
   justify-items: center;
   align-items: center;
   height: 100%;
-  padding: 50px 0;
+  padding: 50px 10px;
+  line-height: 2;
   .contact__intro-illust {
     background: ${(props) =>
       props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
@@ -89,7 +90,8 @@ const Contact = () => {
         />
       </div>
       <p data-aos='fade-up'>
-        채용 혹은 궁금한 점이 있으시다면 아래 폼에서 메일을 보내주세요 :)
+        채용 혹은 궁금한 점이 있으시다면 <br />
+        아래 폼에서 메일을 보내주세요 :)
       </p>
       <form onSubmit={handleSubmit(onSubmit)} data-aos='fade-up'>
         <CustomInput
