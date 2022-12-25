@@ -32,7 +32,7 @@ const Container = styled.footer<{ isdark: boolean }>`
       align-items: center;
       justify-items: center;
       span {
-        font-size: 0.2rem;
+        font-size: 0.5rem;
       }
     }
   }
