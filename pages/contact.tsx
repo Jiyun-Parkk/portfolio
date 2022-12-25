@@ -102,7 +102,6 @@ const Contact = () => {
             shrink: true,
           }}
           placeholder='이메일을 입력해주세요'
-          autoFocus
           {...register('email', {
             required: 'Email을 입력해주세요',
             pattern: {
