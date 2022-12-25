@@ -85,7 +85,7 @@ export const Header: NextPage = () => {
         </nav>
         <Button type='button' onClick={() => dispatch(theme.isDark())}>
           {isDark ? (
-            <LightMode style={{ color: 'red' }} />
+            <LightMode style={{ color: 'yellow' }} />
           ) : (
             <DarkMode style={{ color: 'darkblue' }} />
           )}

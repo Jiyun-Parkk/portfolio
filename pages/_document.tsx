@@ -14,7 +14,6 @@ export default function Document() {
         />
         <meta name='author' content='박지윤' />
         <meta name='robots' content='index, nofollow' />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='title' content='프론트엔드 박지윤의 포트폴리오' />
         <meta name='subject' content='프론트엔드 포트폴리오' />
         <link

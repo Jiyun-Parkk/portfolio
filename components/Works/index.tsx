@@ -46,24 +46,18 @@ const Container = styled.section<{ isDark: boolean }>`
 `
 
 export const Works = () => {
+  const workList = ['Coin-Tracker', 'Devops-Blog', 'Portfolio', 'Oz-Traning']
   const isDark = useAppSelector((state) => state.theme.value)
 
   return (
     <Container isDark={isDark}>
-      <h2>Works</h2>
+      <h2 data-aos='fade-up'>Works</h2>
       <ul>
-        <li>
-          <h3>Coin Tracker</h3>
-        </li>
-        <li>
-          <h3>Devops Blog</h3>
-        </li>
-        <li>
-          <h3>Portfolio</h3>
-        </li>
-        <li>
-          <h3>Oz Training</h3>
-        </li>
+        {workList.map((work, idx) => (
+          <li key={idx} data-aos={idx % 2 === 0 ? 'fade-right' : 'fade-left'}>
+            <h3>{work.replace('-', ' ')}</h3>
+          </li>
+        ))}
       </ul>
     </Container>
   )

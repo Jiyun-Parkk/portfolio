@@ -37,9 +37,15 @@ const Container = styled.div`
 export const Timelines = () => {
   return (
     <Container>
-      <h2>Timeline</h2>
+      <h2 className='about__timeline-title' data-aos='fade-up'>
+        Timeline
+      </h2>
       <Timeline position='alternate'>
-        <TimelineItem>
+        <TimelineItem
+          data-aos='flip-down'
+          data-aos-offset='100'
+          data-aos-delay='100'
+        >
           <TimelineOppositeContent>2015.01 - 2016.01</TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />
@@ -47,7 +53,11 @@ export const Timelines = () => {
           </TimelineSeparator>
           <TimelineContent>국민은행 임원비서 </TimelineContent>
         </TimelineItem>
-        <TimelineItem>
+        <TimelineItem
+          data-aos='flip-down'
+          data-aos-offset='100'
+          data-aos-delay='100'
+        >
           <TimelineOppositeContent>우리은행 임원비서</TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />
@@ -55,7 +65,11 @@ export const Timelines = () => {
           </TimelineSeparator>
           <TimelineContent>2016.04 - 2018.06</TimelineContent>
         </TimelineItem>
-        <TimelineItem>
+        <TimelineItem
+          data-aos='flip-down'
+          data-aos-offset='100'
+          data-aos-delay='100'
+        >
           <TimelineOppositeContent>2017.09 - 2020.09</TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />
@@ -63,7 +77,11 @@ export const Timelines = () => {
           </TimelineSeparator>
           <TimelineContent> 경영학과 편입 졸업</TimelineContent>
         </TimelineItem>
-        <TimelineItem>
+        <TimelineItem
+          data-aos='flip-down'
+          data-aos-offset='100'
+          data-aos-delay='100'
+        >
           <TimelineOppositeContent>
             UI/UX 퍼블리셔 전문가과정 수료
           </TimelineOppositeContent>
@@ -73,7 +91,7 @@ export const Timelines = () => {
           </TimelineSeparator>
           <TimelineContent>2020.10 - 2021.03</TimelineContent>
         </TimelineItem>
-        <TimelineItem>
+        <TimelineItem data-aos='flip-down' data-aos-offset='100'>
           <TimelineOppositeContent>2021.05 - 2022.06</TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot />

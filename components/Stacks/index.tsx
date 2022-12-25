@@ -28,17 +28,27 @@ const Container = styled.div`
 `
 
 export const Stacks = () => {
+  const stackList = [
+    'HTML',
+    'CSS',
+    'SCSS',
+    'Javascript',
+    'Typescript',
+    'React',
+    'Recoil',
+    'styled-components',
+  ]
   return (
     <Container>
-      <h2>Stack</h2>
+      <h2 className='about__stack-title' data-aos='fade-up'>
+        Stack
+      </h2>
       <ul className='stackbox'>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>SCSS</li>
-        <li>Javascript</li>
-        <li>Typescript</li>
-        <li>React</li>
-        <li>Recoil</li>
+        {stackList.map((stack, idx) => (
+          <li data-aos='flip-up' data-aos-delay='100' key={idx}>
+            {stack}
+          </li>
+        ))}
       </ul>
     </Container>
   )
