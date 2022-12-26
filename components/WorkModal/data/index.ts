@@ -50,7 +50,7 @@ const workContents: WorkContentType = {
     detail:
       '홈트족을 돕기위한 운동동기부여 서비스 입니다. 프로젝트 리딩 경험, 팀협업 경험을 쌓기 위해 직접 팀 빌딩을 하여 프로젝트를 리딩 하고 있습니다.',
     stack:
-      'React , Typescript, Recoil, React-query, Styled-components, Firebase',
+      'NextJS , Typescript, Recoil, React-query, Styled-components, Firebase',
     point: [
       '재사용 가능한 컴포넌트를 간단한 코드로 구현하기 위해 지속적인 코드 리뷰 진행',
       '사용자 편의를 고려한 UI/UX 기획',
