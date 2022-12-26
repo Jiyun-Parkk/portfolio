@@ -5,6 +5,7 @@ import { about } from 'styles'
 import { useEffect } from 'react'
 import { ScrollTrigger } from 'gsap/all'
 import gsap from 'gsap'
+import { GetStaticPropsContext } from 'next'
 
 const Home = () => {
   const isDark = useAppSelector((state) => state.theme.value)

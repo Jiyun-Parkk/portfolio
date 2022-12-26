@@ -17,6 +17,11 @@ const Container = styled.section<{ isdark: boolean }>`
     text-shadow: -2px 0px 0 darkgray;
     text-align: center;
   }
+  p {
+    text-align: center;
+    padding-bottom: 50px;
+    line-height: 2;
+  }
   .about__works-container {
     display: flex;
     justify-content: center;
@@ -25,9 +30,6 @@ const Container = styled.section<{ isdark: boolean }>`
 
     @media (max-width: 1200px) {
       flex-direction: column;
-      li {
-        width: 100%;
-      }
     }
   }
 `
@@ -38,11 +40,15 @@ const WorkList = styled(motion.li)<{ thumb: string }>`
   justify-content: center;
   align-items: center;
   justify-items: center;
-  width: 200px;
+  width: 100%;
   height: 200px;
   background: ${(props) => `url(${props.thumb}) no-repeat center / cover`};
   border-radius: 20px;
   cursor: pointer;
+  transition: transform 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
 
   &::before {
     position: absolute;
@@ -61,6 +67,9 @@ const WorkList = styled(motion.li)<{ thumb: string }>`
     text-align: center;
     color: #fff;
     text-shadow: -2px 0 0 ${(props) => props.theme.text.point};
+  }
+  @media (max-width: 1200px) {
+    width: 90%;
   }
 `
 const Overlay = styled(motion.div)`
@@ -99,6 +108,9 @@ export const Works = () => {
   return (
     <Container isdark={isDark}>
       <h2 data-aos='flip-up'>Works</h2>
+      <p>
+        배너를 클릭하시면 <br /> 프로젝트 상세 정보를 볼 수 있습니다 :)
+      </p>
       <motion.ul className='about__works-container'>
         {workList.map((work, idx) => (
           <WorkList

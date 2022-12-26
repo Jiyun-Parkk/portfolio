@@ -24,11 +24,14 @@ const Container = styled(motion.div)<{ isdark: string }>`
     border-radius: 20px;
     background-color: ${(props) => props.theme.background.lighter};
     padding: 20px;
-    height: 500px;
+    height: 80vh;
     overflow: scroll;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    p {
+      text-align: left;
+    }
     .modal-close-btn {
       place-self: flex-end;
       color: #fff;
@@ -37,6 +40,7 @@ const Container = styled(motion.div)<{ isdark: string }>`
       svg {
         width: 30px;
         height: 30px;
+        fill: ${(props) => props.theme.text.point};
       }
     }
     &::-webkit-scrollbar {
