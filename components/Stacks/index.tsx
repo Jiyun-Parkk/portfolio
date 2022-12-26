@@ -3,11 +3,14 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: flex;
   align-items: center;
-
+  h2 {
+    flex-basis: 50%;
+  }
   ul {
+    flex-basis: 50%;
     padding: 0 16px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
