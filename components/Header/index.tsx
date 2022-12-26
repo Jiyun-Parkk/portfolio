@@ -12,7 +12,7 @@ import { motion } from 'framer-motion'
 
 const Container = styled.header<{ scrollY: number; isdark: boolean }>`
   position: fixed;
-  z-index: 10;
+  z-index: 20;
   width: 100%;
   padding: 10px;
   display: flex;

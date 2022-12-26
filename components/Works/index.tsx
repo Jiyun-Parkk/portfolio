@@ -59,22 +59,31 @@ const WorkList = styled(motion.li)<{ thumb: string }>`
     content: '';
     display: block;
   }
-  h3 {
-    z-index: 10;
-    font-size: 1.5rem;
+  .about__work-title {
     flex: 1;
-    font-weight: bolder;
-    text-align: center;
-    color: #fff;
-    text-shadow: -2px 0 0 ${(props) => props.theme.text.point};
+    z-index: 10;
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bolder;
+      text-align: center;
+      color: #fff;
+      text-shadow: -2px 0 0 ${(props) => props.theme.text.point};
+    }
+    p {
+      padding: 0;
+      font-size: 14px;
+    }
   }
   @media (max-width: 1200px) {
     width: 90%;
+    &:hover {
+      transform: none;
+    }
   }
 `
 const Overlay = styled(motion.div)`
   position: fixed;
-  z-index: 20;
+  z-index: 25;
   top: 0;
   left: 0;
   width: 100%;
@@ -108,9 +117,7 @@ export const Works = () => {
   return (
     <Container isdark={isDark}>
       <h2 data-aos='flip-up'>Works</h2>
-      <p>
-        배너를 클릭하시면 <br /> 프로젝트 상세 정보를 볼 수 있습니다 :)
-      </p>
+
       <motion.ul className='about__works-container'>
         {workList.map((work, idx) => (
           <WorkList
@@ -123,7 +130,10 @@ export const Works = () => {
             transition={{ ease: 'linear', duration: 0.2 }}
             layoutId={work.title}
           >
-            <h3>{work.title.replace('-', ' ')}</h3>
+            <div className='about__work-title'>
+              <h3>{work.title.replace('-', ' ')}</h3>
+              <p>Click here</p>
+            </div>
           </WorkList>
         ))}
       </motion.ul>
