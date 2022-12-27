@@ -6,7 +6,8 @@ import { modal } from 'store/modules'
 import WorkModal from 'components/WorkModal'
 
 const Container = styled.section<{ isdark: boolean }>`
-  padding: 100px 20px;
+  /*padding: 100px 20px;*/
+  padding: 50px 20px;
   h2 {
     padding: 50px 0;
     color: ${(props) => props.theme.text.point};
@@ -41,7 +42,7 @@ const WorkList = styled(motion.li)<{ thumb: string }>`
   align-items: center;
   justify-items: center;
   width: 100%;
-  height: 200px;
+  height: 400px;
   background: ${(props) => `url(${props.thumb}) no-repeat center / cover`};
   border-radius: 20px;
   cursor: pointer;
@@ -72,6 +73,7 @@ const WorkList = styled(motion.li)<{ thumb: string }>`
     p {
       padding: 0;
       font-size: 14px;
+      color: #fff;
     }
   }
   @media (max-width: 1200px) {
@@ -116,7 +118,7 @@ export const Works = () => {
 
   return (
     <Container isdark={isDark}>
-      <h2 data-aos='flip-up'>Works</h2>
+      <h2 data-aos='flip-up'>Project</h2>
 
       <motion.ul className='about__works-container'>
         {workList.map((work, idx) => (

@@ -3,10 +3,7 @@ import { Layout } from 'components'
 import { ThemeProvider } from 'styled-components'
 import { dark, light } from 'styles/theme'
 import GlobalStyle from 'styles/global.styled'
-import { useSelector } from 'react-redux'
 import wrapper from 'store'
-import { gsap } from 'gsap'
-import { CSSPlugin } from 'gsap/CSSPlugin'
 import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
@@ -17,9 +14,8 @@ function App({ Component, pageProps }: AppProps) {
   const isModalOpen = useAppSelector((state) => state.modal.value)
 
   useEffect(() => {
-    gsap.registerPlugin(CSSPlugin)
     AOS.init({
-      offset: 120,
+      offset: 50,
       duration: 500,
       easing: 'linear',
     })

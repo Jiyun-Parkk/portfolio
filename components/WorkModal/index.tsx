@@ -33,6 +33,7 @@ const Container = styled(motion.div)<{ isdark: string }>`
       text-align: left;
     }
     .modal-close-btn {
+      position: fixed;
       place-self: flex-end;
       color: #fff;
       width: 50px;

@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-const Container = styled.header<{ scrollY: number; isdark: boolean }>`
+const Container = styled.header<{ isdark: boolean }>`
   position: fixed;
   z-index: 20;
   width: 100%;
@@ -70,20 +70,10 @@ export const Header: NextPage = () => {
   const router = useRouter()
   const isDark = useAppSelector((state) => state.theme.value)
   const dispatch = useAppDispatch()
-  const [scrollY, setScrollY] = useState(0)
 
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setScrollY(window.scrollY)
-    })
-  }, [scrollY])
   return (
     <>
-      <Container
-        isdark={isDark}
-        scrollY={scrollY}
-        className={scrollY === 0 ? '' : 'active'}
-      >
+      <Container isdark={isDark}>
         <Link href='/'>
           <Image
             src={isDark ? '/static/logo-white.png' : '/static/logo-black.png'}

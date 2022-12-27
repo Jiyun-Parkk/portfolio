@@ -8,7 +8,10 @@ interface LayoutProps {
 }
 
 const Container = styled.main`
-  padding-top: 110px;
+  padding-top: 80px;
+  section {
+    height: 100vh;
+  }
 `
 
 export const Layout = ({ children }: LayoutProps) => {

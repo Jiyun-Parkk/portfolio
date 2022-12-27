@@ -5,6 +5,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { RegistForm } from 'types/form'
+
 const Container = styled.section<{ isdark: boolean }>`
   display: flex;
   gap: 50px;
@@ -26,7 +27,7 @@ const Container = styled.section<{ isdark: boolean }>`
   }
 
   form {
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-items: center;
     align-items: center;
@@ -38,6 +39,10 @@ const Container = styled.section<{ isdark: boolean }>`
       border: 2px solid ${(props) => props.theme.text.basic};
       color: ${(props) => props.theme.text.basic};
       font-weight: 600;
+    }
+
+    @media (max-width: 750px) {
+      width: 100%;
     }
   }
 `
