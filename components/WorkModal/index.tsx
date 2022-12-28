@@ -20,7 +20,7 @@ const Container = styled(motion.div)<{ isdark: string }>`
 
   .box {
     margin: 0 auto;
-    width: 60%;
+    width: 80%;
     border-radius: 20px;
     background-color: ${(props) => props.theme.background.lighter};
     padding: 20px;
@@ -29,21 +29,25 @@ const Container = styled(motion.div)<{ isdark: string }>`
     display: flex;
     flex-direction: column;
     gap: 20px;
+
     p {
       text-align: left;
     }
+
     .modal-close-btn {
       position: fixed;
       place-self: flex-end;
       color: #fff;
       width: 50px;
       height: 50px;
+
       svg {
         width: 30px;
         height: 30px;
         fill: ${(props) => props.theme.text.point};
       }
     }
+
     &::-webkit-scrollbar {
       display: none;
     }

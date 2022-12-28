@@ -7,8 +7,8 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useScroll } from 'framer-motion'
 
 const Container = styled.header<{ isdark: boolean }>`
   position: fixed;
@@ -70,10 +70,22 @@ export const Header: NextPage = () => {
   const router = useRouter()
   const isDark = useAppSelector((state) => state.theme.value)
   const dispatch = useAppDispatch()
-
+  const { scrollY } = useScroll()
+  const headerRef = useRef<HTMLBaseElement>(null)
+  useEffect(() => {
+    return scrollY.onChange((scroll) => {
+      if (headerRef.current) {
+        if (scroll > 0) {
+          headerRef.current.classList.add('active')
+        } else {
+          headerRef.current.classList.remove('active')
+        }
+      }
+    })
+  }, [scrollY])
   return (
     <>
-      <Container isdark={isDark}>
+      <Container isdark={isDark} ref={headerRef}>
         <Link href='/'>
           <Image
             src={isDark ? '/static/logo-white.png' : '/static/logo-black.png'}

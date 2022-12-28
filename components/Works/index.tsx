@@ -7,7 +7,6 @@ import WorkModal from 'components/WorkModal'
 
 const Container = styled.section<{ isdark: boolean }>`
   /*padding: 100px 20px;*/
-  padding: 50px 20px;
   h2 {
     padding: 50px 0;
     color: ${(props) => props.theme.text.point};
@@ -118,7 +117,7 @@ export const Works = () => {
 
   return (
     <Container isdark={isDark}>
-      <h2 data-aos='flip-up'>Project</h2>
+      <h2>Project</h2>
 
       <motion.ul className='about__works-container'>
         {workList.map((work, idx) => (

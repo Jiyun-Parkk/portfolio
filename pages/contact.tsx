@@ -86,7 +86,6 @@ const Contact = () => {
     <Container isdark={isDark}>
       <div className='contact__intro-illust'>
         <Image
-          data-aos='fade-up'
           src='/static/contact.svg'
           width={300}
           height={300}
@@ -94,11 +93,11 @@ const Contact = () => {
           priority
         />
       </div>
-      <p data-aos='fade-up'>
+      <p>
         채용 혹은 궁금한 점이 있으시다면 <br />
         아래 폼에서 메일을 보내주세요 :)
       </p>
-      <form onSubmit={handleSubmit(onSubmit)} data-aos='fade-up'>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <CustomInput
           id='outlined-required'
           label='E-Mail'

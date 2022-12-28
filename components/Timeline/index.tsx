@@ -17,7 +17,6 @@ const Container = styled.section`
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  padding: 50px 0;
   ul {
     padding: 0;
     width: 100%;

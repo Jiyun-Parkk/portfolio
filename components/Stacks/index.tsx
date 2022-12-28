@@ -43,14 +43,10 @@ export const Stacks = () => {
   ]
   return (
     <Container>
-      <h2 className='about__stack-title' data-aos='fade-up'>
-        Stack
-      </h2>
+      <h2 className='about__stack-title'>Stack</h2>
       <ul className='stackbox'>
         {stackList.map((stack, idx) => (
-          <li data-aos='flip-up' data-aos-delay='100' key={idx}>
-            {stack}
-          </li>
+          <li key={idx}>{stack}</li>
         ))}
       </ul>
     </Container>

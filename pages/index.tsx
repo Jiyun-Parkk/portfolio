@@ -2,6 +2,8 @@ import { useAppSelector } from 'hooks'
 import Image from 'next/image'
 import { SEO, Stacks, Timelines, Works } from 'components'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { duration } from '@mui/material'
 
 export const Intro = styled.section<{ isdark: boolean }>`
   margin: 0 30px;
@@ -12,7 +14,7 @@ export const Intro = styled.section<{ isdark: boolean }>`
   .about__intro-greeting {
     flex-basis: 50%;
     width: 100%;
-    padding: 50px 0;
+    padding: 100px 20px;
     place-self: flex-start;
     line-height: 2;
     font-size: 1rem;
@@ -22,19 +24,18 @@ export const Intro = styled.section<{ isdark: boolean }>`
     h1 {
       margin-bottom: 80px;
 
-      span {
+      p {
         color: ${(props) => props.theme.text.point};
         flex-basis: 50%;
-        text-align: center;
         font-size: 2.5rem;
         font-weight: bolder;
         text-shadow: -2px 0px 0 darkgray;
         letter-spacing: 5px;
-        line-height: 1;
+        line-height: 1.5;
       }
     }
 
-    p {
+    .explain-me {
       span {
         color: ${(props) => props.theme.text.point};
         text-align: center;
@@ -47,9 +48,6 @@ export const Intro = styled.section<{ isdark: boolean }>`
     @media (max-width: 1200px) {
       flex: 1;
       place-self: center;
-      h1 {
-        line-height: 3.5;
-      }
     }
   }
 
@@ -96,26 +94,35 @@ const Home = () => {
       {/* 첫번째 섹션 */}
       <Intro isdark={isDark}>
         <div className='about__intro-greeting'>
-          <h1>
-            <span>
+          <motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20, rotateX: 180 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ duration: 0.5, ease: 'linear' }}
+            >
               WELCOME TO
-              <br />
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20, rotateX: 180 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ duration: 0.5, ease: 'linear', delay: 0.5 }}
+            >
               Ji Yun&apos;s PORTFOLIO
-            </span>
-          </h1>
-          <p>
-            배우는 것을 좋아하고
-            <br />
-            좋은 코드를 위한 리팩토링을 즐겨합니다.
-            <br />
+            </motion.p>
+          </motion.h1>
+          <p className='explain-me'>배우는 것을 좋아하고</p>
+          <p className='explain-me'>좋은 코드를 위한 리팩토링을 즐겨합니다.</p>
+
+          <p className='explain-me'>
             <span>코드개선 ・ 의사소통 ・ 협업</span>을
-            <br /> 잘하는 <span>프론트엔드 개발자 박지윤</span>입니다.
+          </p>
+          <p className='explain-me'>
+            잘하는 <span>프론트엔드 개발자 박지윤</span>입니다.
           </p>
         </div>
 
         <div className='about__intro-illust'>
           <Image
-            data-aos='fade-up'
             src='/static/woman.svg'
             width={300}
             height={300}
