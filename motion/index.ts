@@ -1,0 +1,51 @@
+export const FlipVerticalMotion = {
+  start: {
+    opacity: 0,
+    y: 20,
+    rotateX: 180,
+  },
+  end: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+  },
+}
+
+export const FlipHorizontalMotion = {
+  start: {
+    opacity: 0,
+    rotateY: 180,
+  },
+  end: {
+    opacity: 1,
+    rotateY: 0,
+  },
+}
+
+export const StaggerMotion = {
+  start: {
+    opacity: 0,
+    y: 20,
+    rotateX: 180,
+  },
+  end: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    transition: {
+      staggerChildren: 0.05,
+      delay: 1,
+    },
+  },
+}
+
+export const ShowupMotion = {
+  start: {
+    opacity: 0,
+    y: 20,
+  },
+  end: {
+    opacity: 1,
+    y: 0,
+  },
+}

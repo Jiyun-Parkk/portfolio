@@ -4,19 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { modal } from 'store/modules'
 import WorkModal from 'components/WorkModal'
+import { ContentTitle } from 'components/ContentTitle'
 
 const Container = styled.section<{ isdark: boolean }>`
-  /*padding: 100px 20px;*/
-  h2 {
-    padding: 50px 0;
-    color: ${(props) => props.theme.text.point};
-    flex-basis: 50%;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bolder;
-    text-shadow: -2px 0px 0 darkgray;
-    text-align: center;
-  }
   p {
     text-align: center;
     padding-bottom: 50px;
@@ -117,7 +107,7 @@ export const Works = () => {
 
   return (
     <Container isdark={isDark}>
-      <h2>Project</h2>
+      <ContentTitle title='Project' />
 
       <motion.ul className='about__works-container'>
         {workList.map((work, idx) => (

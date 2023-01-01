@@ -14,7 +14,7 @@ const Container = styled.header<{ isdark: boolean }>`
   position: fixed;
   z-index: 20;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-items: center;

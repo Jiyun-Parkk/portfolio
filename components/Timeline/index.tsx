@@ -9,25 +9,26 @@ import {
 } from '@mui/lab'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { useAppSelector } from 'hooks'
 import { ContentTitle } from 'components/ContentTitle'
+import { ShowupMotion } from 'motion'
 
 const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  ul {
-    padding: 0;
+  .timeline-box {
     width: 100%;
-    height: 800px;
-    li {
-      white-space: nowrap;
-      height: 100%;
-      .MuiTimelineConnector-root {
+    ul {
+      padding: 0;
+      height: 800px;
+      li {
+        white-space: nowrap;
+        height: 100%;
       }
     }
   }
+
   @media (max-width: 750px) {
     flex-direction: column;
     gap: 40px;
@@ -42,7 +43,6 @@ const Container = styled.section`
 `
 
 export const Timelines = () => {
-  const isDark = useAppSelector((state) => state.theme.value)
   const timeList = [
     {
       date: '2015.01 - 2016.01',
@@ -68,20 +68,28 @@ export const Timelines = () => {
   return (
     <Container>
       <ContentTitle title='Timeline' />
-      <Timeline position='alternate'>
-        {timeList.map((list, idx) => (
-          <TimelineItem key={idx}>
-            <TimelineSeparator>
-              <TimelineDot />
-              {idx !== timeList.length - 1 && <TimelineConnector />}
-            </TimelineSeparator>
-            <TimelineContent>
-              <p>{list.date}</p>
-              <p>{list.history}</p>
-            </TimelineContent>
-          </TimelineItem>
-        ))}
-      </Timeline>
+      <motion.div
+        variants={ShowupMotion}
+        initial='start'
+        whileInView='end'
+        transition={{ delay: 0.3 }}
+        className='timeline-box'
+      >
+        <Timeline position='alternate'>
+          {timeList.map((list, idx) => (
+            <TimelineItem key={idx}>
+              <TimelineSeparator>
+                <TimelineDot />
+                {idx !== timeList.length - 1 && <TimelineConnector />}
+              </TimelineSeparator>
+              <TimelineContent>
+                <p>{list.date}</p>
+                <p>{list.history}</p>
+              </TimelineContent>
+            </TimelineItem>
+          ))}
+        </Timeline>
+      </motion.div>
     </Container>
   )
 }

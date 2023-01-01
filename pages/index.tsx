@@ -1,12 +1,13 @@
 import { useAppSelector } from 'hooks'
 import Image from 'next/image'
-import { SEO, Stacks, Timelines, Works } from 'components'
+import { SEO, Stacks, TextAnimation, Timelines, Works } from 'components'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { duration } from '@mui/material'
+import { useRef } from 'react'
+import { FlipHorizontalMotion, FlipVerticalMotion, StaggerMotion } from 'motion'
 
 export const Intro = styled.section<{ isdark: boolean }>`
-  margin: 0 30px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,24 +15,22 @@ export const Intro = styled.section<{ isdark: boolean }>`
   .about__intro-greeting {
     flex-basis: 50%;
     width: 100%;
-    padding: 100px 20px;
     place-self: flex-start;
     line-height: 2;
     font-size: 1rem;
     padding-bottom: 30px;
     z-index: 2;
 
-    h1 {
-      margin-bottom: 80px;
-
-      p {
-        color: ${(props) => props.theme.text.point};
-        flex-basis: 50%;
-        font-size: 2.5rem;
-        font-weight: bolder;
-        text-shadow: -2px 0px 0 darkgray;
-        letter-spacing: 5px;
-        line-height: 1.5;
+    p {
+      color: ${(props) => props.theme.text.point};
+      flex-basis: 50%;
+      font-size: 2.5rem;
+      font-weight: bolder;
+      text-shadow: -2px 0px 0 darkgray;
+      letter-spacing: 5px;
+      line-height: 1.5;
+      &:nth-child(2) {
+        margin-bottom: 20px;
       }
     }
 
@@ -42,12 +41,18 @@ export const Intro = styled.section<{ isdark: boolean }>`
         font-size: 20px;
         font-weight: bolder;
         text-shadow: -2px 0px 0 darkgray;
+        display: inline-block;
       }
     }
 
     @media (max-width: 1200px) {
       flex: 1;
       place-self: center;
+    }
+    @media (max-width: 750px) {
+      p {
+        font-size: 2rem;
+      }
     }
   }
 
@@ -60,7 +65,6 @@ export const Intro = styled.section<{ isdark: boolean }>`
 
     img {
       flex: 1;
-      transform: rotateY(180deg);
       margin-bottom: 100px;
     }
 
@@ -93,35 +97,49 @@ const Home = () => {
 
       {/* 첫번째 섹션 */}
       <Intro isdark={isDark}>
-        <div className='about__intro-greeting'>
-          <motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20, rotateX: 180 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.5, ease: 'linear' }}
-            >
-              WELCOME TO
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20, rotateX: 180 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ duration: 0.5, ease: 'linear', delay: 0.5 }}
-            >
-              Ji Yun&apos;s PORTFOLIO
-            </motion.p>
-          </motion.h1>
-          <p className='explain-me'>배우는 것을 좋아하고</p>
-          <p className='explain-me'>좋은 코드를 위한 리팩토링을 즐겨합니다.</p>
+        <motion.div
+          initial='start'
+          whileInView='end'
+          className='about__intro-greeting'
+        >
+          <motion.p variants={FlipVerticalMotion}>WELCOME TO</motion.p>
+          <motion.p variants={FlipVerticalMotion} transition={{ delay: 0.5 }}>
+            Ji Yun PORTFOLIO
+          </motion.p>
 
-          <p className='explain-me'>
-            <span>코드개선 ・ 의사소통 ・ 협업</span>을
-          </p>
-          <p className='explain-me'>
-            잘하는 <span>프론트엔드 개발자 박지윤</span>입니다.
-          </p>
-        </div>
+          <motion.div
+            variants={StaggerMotion}
+            initial='start'
+            whileInView='end'
+          >
+            <TextAnimation
+              variants={FlipVerticalMotion}
+              text='배우는 것을 좋아하고'
+            />
+            <TextAnimation
+              variants={FlipVerticalMotion}
+              text='좋은 코드를 위한 리팩토링을 즐겨합니다'
+            />
+            <TextAnimation
+              variants={FlipVerticalMotion}
+              text='코드개선 ・ 의사소통 ・ 협업을'
+            />
+            <TextAnimation
+              variants={FlipVerticalMotion}
+              text='잘하는 개발자 박지윤입니다'
+            />
+          </motion.div>
+        </motion.div>
 
-        <div className='about__intro-illust'>
+        <motion.div
+          className='about__intro-illust'
+          initial='start'
+          whileInView='end'
+          variants={FlipHorizontalMotion}
+          transition={{
+            duration: 1,
+          }}
+        >
           <Image
             src='/static/woman.svg'
             width={300}
@@ -130,7 +148,7 @@ const Home = () => {
             className='woman'
             priority
           />
-        </div>
+        </motion.div>
       </Intro>
 
       {/* 두번째 섹션 */}

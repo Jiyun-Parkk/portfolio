@@ -9,9 +9,13 @@ interface LayoutProps {
 }
 
 const Container = styled(m.main)`
-  padding-top: 80px;
+  padding: 80px 0 150px 0;
   section {
-    padding: 50px 20px;
+    padding: 50px 30px;
+  }
+
+  @media (max-width: 750px) {
+    padding: 0;
   }
 `
 

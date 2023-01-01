@@ -5,6 +5,8 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { RegistForm } from 'types/form'
+import { motion } from 'framer-motion'
+import { ShowupMotion } from 'motion'
 
 const Container = styled.section<{ isdark: boolean }>`
   display: flex;
@@ -18,7 +20,8 @@ const Container = styled.section<{ isdark: boolean }>`
   .contact__intro-illust {
     background: ${(props) =>
       props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
-    width: 300px;
+    width: 200px;
+    height: 200px;
     border-radius: 100%;
     aspect-ratio: 1;
     img {
@@ -72,6 +75,17 @@ const CustomInput = styled(TextField)`
   }
 `
 
+const mainImagVariants = {
+  start: {
+    opacity: 0,
+    rotateY: 180,
+  },
+  end: {
+    opacity: 1,
+    rotateY: 0,
+  },
+}
+
 const Contact = () => {
   const isDark = useAppSelector((state) => state.theme.value)
   const {
@@ -85,19 +99,32 @@ const Contact = () => {
   return (
     <Container isdark={isDark}>
       <div className='contact__intro-illust'>
-        <Image
+        <motion.img
           src='/static/contact.svg'
           width={300}
           height={300}
           alt='contact'
-          priority
+          initial='start'
+          whileInView='end'
+          variants={mainImagVariants}
+          transition={{
+            duration: 1,
+          }}
         />
       </div>
       <p>
         채용 혹은 궁금한 점이 있으시다면 <br />
         아래 폼에서 메일을 보내주세요 :)
       </p>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <motion.form
+        onSubmit={handleSubmit(onSubmit)}
+        variants={ShowupMotion}
+        initial='start'
+        whileInView='end'
+        transition={{
+          duration: 0.5,
+        }}
+      >
         <CustomInput
           id='outlined-required'
           label='E-Mail'
@@ -133,7 +160,7 @@ const Contact = () => {
         />
 
         <Button type='submit'>Send</Button>
-      </form>
+      </motion.form>
     </Container>
   )
 }
