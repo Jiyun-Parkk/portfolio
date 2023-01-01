@@ -17,7 +17,7 @@ interface TextAniprops {
 }
 
 const SplitText = styled(motion.span)`
-  font-size: 20px;
+  font-size: 18px;
 `
 
 export const TextAnimation = ({ text, variants }: TextAniprops) => {

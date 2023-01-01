@@ -30,7 +30,7 @@ export const Intro = styled.section<{ isdark: boolean }>`
     p {
       color: ${(props) => props.theme.text.point};
       flex-basis: 50%;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bolder;
       text-shadow: -2px 0px 0 darkgray;
       letter-spacing: 5px;
