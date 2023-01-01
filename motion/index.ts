@@ -49,3 +49,15 @@ export const ShowupMotion = {
     y: 0,
   },
 }
+
+export const ShowMotion = {
+  start: {
+    opacity: 0,
+  },
+  end: {
+    opacity: 1,
+    transition: {
+      delay: 0.2,
+    },
+  },
+}

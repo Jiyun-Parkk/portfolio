@@ -86,7 +86,7 @@ export const Header: NextPage = () => {
   return (
     <>
       <Container isdark={isDark} ref={headerRef}>
-        <Link href='/'>
+        <Link href='/' shallow={true}>
           <Image
             src={isDark ? '/static/logo-white.png' : '/static/logo-black.png'}
             width={100}
@@ -98,7 +98,7 @@ export const Header: NextPage = () => {
         <nav>
           <ul>
             <li className={router.pathname === '/' ? 'active' : ''}>
-              <Link href='/' shallow>
+              <Link href='/' shallow={true}>
                 About
               </Link>
               {router.pathname === '/' && (
@@ -106,7 +106,7 @@ export const Header: NextPage = () => {
               )}
             </li>
             <li className={router.pathname === '/contact' ? 'active' : ''}>
-              <Link href='/contact' shallow>
+              <Link href='/contact' shallow={true}>
                 Contact
               </Link>
               {router.pathname === '/contact' && (

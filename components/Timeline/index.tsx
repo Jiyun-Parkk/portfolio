@@ -21,9 +21,9 @@ const Container = styled.section`
     width: 100%;
     ul {
       padding: 0;
+      width: 100%;
       height: 800px;
       li {
-        white-space: nowrap;
         height: 100%;
       }
     }
@@ -36,7 +36,6 @@ const Container = styled.section`
       li {
         width: 100%;
         align-self: center;
-        white-space: normal;
       }
     }
   }

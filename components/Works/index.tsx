@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { modal } from 'store/modules'
 import WorkModal from 'components/WorkModal'
 import { ContentTitle } from 'components/ContentTitle'
+import { ShowMotion } from 'motion'
 
 const Container = styled.section<{ isdark: boolean }>`
   p {
@@ -112,6 +113,9 @@ export const Works = () => {
       <motion.ul className='about__works-container'>
         {workList.map((work, idx) => (
           <WorkList
+            variants={ShowMotion}
+            initial='start'
+            whileInView='end'
             key={idx}
             thumb={work.thumb}
             onClick={() => {
