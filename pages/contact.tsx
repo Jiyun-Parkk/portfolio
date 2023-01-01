@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { RegistForm } from 'types/form'
 import { motion } from 'framer-motion'
 import { ShowupMotion, FlipHorizontalMotion } from 'motion'
+import { NextPage } from 'next'
 
 const Container = styled.section<{ isdark: boolean }>`
   display: flex;
@@ -85,7 +86,7 @@ const CustomInput = styled(TextField)`
   }
 `
 
-const Contact = () => {
+const Contact: NextPage = () => {
   const isDark = useAppSelector((state) => state.theme.value)
   const {
     register,

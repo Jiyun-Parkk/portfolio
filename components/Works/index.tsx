@@ -116,6 +116,7 @@ export const Works = () => {
             variants={{
               start: {
                 opacity: 0,
+                zIndex: 10,
               },
               end: {
                 opacity: 1,
@@ -125,6 +126,9 @@ export const Works = () => {
               },
             }}
             initial='start'
+            exit={{
+              zIndex: 5,
+            }}
             whileInView='end'
             key={idx}
             thumb={work.thumb}
@@ -132,7 +136,7 @@ export const Works = () => {
               setWorkName(work.title)
               dispatch(modal.isOpen(true))
             }}
-            transition={{ ease: 'linear', duration: 0.5 }}
+            transition={{ ease: 'linear', duration: 0.1 }}
             layoutId={work.title}
           >
             <div className='about__work-title'>

@@ -43,18 +43,18 @@ const Container = styled.section`
 
 export const Timelines = () => {
   const timeList = [
-    {
-      date: '2015.01 - 2016.01',
-      history: '국민은행 임원비서',
-    },
-    {
-      date: '2016.04 - 2018.05',
-      history: '우리은행 임원비서',
-    },
-    {
-      date: '2017.09 - 2020.09',
-      history: '경영학과 편입 졸업',
-    },
+    //{
+    //  date: '2015.01 - 2016.01',
+    //  history: '국민은행 임원비서',
+    //},
+    //{
+    //  date: '2016.04 - 2018.05',
+    //  history: '우리은행 임원비서',
+    //},
+    //{
+    //  date: '2017.09 - 2020.09',
+    //  history: '경영학과 편입 졸업',
+    //},
     {
       date: '2020.10 - 2021.03',
       history: 'UI/UX 웹퍼블리셔 과정 수료',
@@ -62,6 +62,14 @@ export const Timelines = () => {
     {
       date: '2021.05 - 2022.06',
       history: '(주)아이엠폼 퍼블리셔 근무',
+    },
+    {
+      date: '2022.06 - 2022.12',
+      history: 'Vue 스터디',
+    },
+    {
+      date: '2022.09 - 현재',
+      history: '방송통신대학교 컴퓨터공학과 편입',
     },
   ]
   return (

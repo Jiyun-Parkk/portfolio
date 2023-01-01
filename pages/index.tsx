@@ -101,7 +101,6 @@ export const InfoBox = styled.section<{ isdark: boolean }>`
 const Home = () => {
   const isDark = useAppSelector((state) => state.theme.value)
   const greetings = [
-    '안녕하세요 👋',
     '배우는 것을 좋아하고',
     '좋은 코드를 위한 리팩토링을 즐겨합니다',
     '코드개선 ・ 의사소통 ・ 협업을 잘하는',

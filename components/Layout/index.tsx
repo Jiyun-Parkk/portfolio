@@ -8,7 +8,7 @@ interface LayoutProps {
   children: ReactElement
 }
 
-const Container = styled(m.main)`
+const Container = styled.main`
   section {
     padding: 100px 30px;
   }
@@ -16,10 +16,10 @@ const Container = styled(m.main)`
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <LazyMotion features={domAnimation}>
+    <>
       <Header />
       <Container>{children}</Container>
       <Footer />
-    </LazyMotion>
+    </>
   )
 }

@@ -21,8 +21,7 @@ const SplitText = styled(motion.span)`
 `
 
 export const TextAnimation = ({ text, variants }: TextAniprops) => {
-  const [textArr, setTextArr] = useState([''])
-  useEffect(() => setTextArr(text.split('')), [text])
+  const textArr = text.split('')
   return (
     <>
       {textArr?.map((text, idx) => (
