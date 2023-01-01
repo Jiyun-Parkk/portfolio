@@ -8,7 +8,7 @@ const Title = styled(motion.h2)`
   font-size: 30px;
   font-weight: bolder;
   text-shadow: -2px 0px 0 darkgray;
-  padding: 100px 0 150px 0;
+  padding: 100px 0;
 `
 
 export const ContentTitle = ({ title }: { title: string }) => {

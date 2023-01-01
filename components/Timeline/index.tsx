@@ -72,7 +72,7 @@ export const Timelines = () => {
         variants={ShowupMotion}
         initial='start'
         whileInView='end'
-        transition={{ delay: 0.3 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
         className='timeline-box'
       >
         <Timeline position='alternate'>

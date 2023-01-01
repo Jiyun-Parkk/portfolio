@@ -15,8 +15,8 @@ const Container = styled.section<{ isdark: boolean }>`
   justify-items: center;
   align-items: center;
   height: 100%;
-  padding: 50px 10px;
   line-height: 2;
+
   .contact__intro-illust {
     background: ${(props) =>
       props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};

@@ -98,13 +98,17 @@ export const Header: NextPage = () => {
         <nav>
           <ul>
             <li className={router.pathname === '/' ? 'active' : ''}>
-              <Link href='/'>About</Link>
+              <Link href='/' shallow>
+                About
+              </Link>
               {router.pathname === '/' && (
                 <motion.span className='circle' layoutId='circle'></motion.span>
               )}
             </li>
             <li className={router.pathname === '/contact' ? 'active' : ''}>
-              <Link href='/contact'>Contact</Link>
+              <Link href='/contact' shallow>
+                Contact
+              </Link>
               {router.pathname === '/contact' && (
                 <motion.span className='circle' layoutId='circle'></motion.span>
               )}

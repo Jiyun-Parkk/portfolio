@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { SEO, Stacks, TextAnimation, Timelines, Works } from 'components'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { useRef } from 'react'
 import { FlipHorizontalMotion, FlipVerticalMotion, StaggerMotion } from 'motion'
 
 export const Intro = styled.section<{ isdark: boolean }>`
@@ -152,10 +151,8 @@ const Home = () => {
       </Intro>
 
       {/* 두번째 섹션 */}
+      <Stacks />
       <Timelines />
-      {/*<InfoBox isdark={isDark} className='about__info'>*/}
-      {/*<Stacks />*/}
-      {/*</InfoBox>*/}
 
       {/* 세번째 섹션 */}
       <Works />

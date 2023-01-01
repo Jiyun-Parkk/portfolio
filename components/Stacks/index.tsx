@@ -1,32 +1,33 @@
+import { ContentTitle } from 'components/ContentTitle'
 import styled from 'styled-components'
 
 const Container = styled.div`
   display: flex;
   align-items: center;
-  h2 {
-    flex-basis: 50%;
-  }
+  flex-direction: column;
+  padding: 100px 0;
+  gap: 40px;
+
   ul {
-    flex-basis: 50%;
     padding: 0 16px;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
+    justify-items: center;
     gap: 10px;
     flex-wrap: wrap;
+
     li {
-      padding: 5px 7px;
+      width: 200px;
+      height: 200px;
+      line-height: 200px;
       background: #263159;
       text-align: center;
       font-weight: bolder;
-      font-size: 14px;
+      font-size: 1.3rem;
       border-radius: 5px;
       color: #eeee;
     }
-  }
-  @media (max-width: 750px) {
-    flex-direction: column;
-    gap: 40px;
   }
 `
 
@@ -43,7 +44,7 @@ export const Stacks = () => {
   ]
   return (
     <Container>
-      <h2 className='about__stack-title'>Stack</h2>
+      <ContentTitle title='Stack' />
       <ul className='stackbox'>
         {stackList.map((stack, idx) => (
           <li key={idx}>{stack}</li>
