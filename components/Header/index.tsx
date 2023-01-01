@@ -67,10 +67,21 @@ const Container = styled.header<{ isdark: boolean }>`
 `
 
 export const Header: NextPage = () => {
+  //const NavList = [
+  //  { title: 'home', route: '/' },
+  //  { title: 'about', route: '/about' },
+  //  { title: 'project', route: '/project' },
+  //  { title: 'contact', route: '/contact' },
+  //]
+  const NavList = [
+    { title: 'about', route: '/' },
+    { title: 'contact', route: '/contact' },
+  ]
+
   const router = useRouter()
-  const isDark = useAppSelector((state) => state.theme.value)
-  const dispatch = useAppDispatch()
   const { scrollY } = useScroll()
+  const dispatch = useAppDispatch()
+  const isDark = useAppSelector((state) => state.theme.value)
   const headerRef = useRef<HTMLBaseElement>(null)
   useEffect(() => {
     return scrollY.onChange((scroll) => {
@@ -97,22 +108,22 @@ export const Header: NextPage = () => {
         </Link>
         <nav>
           <ul>
-            <li className={router.pathname === '/' ? 'active' : ''}>
-              <Link href='/' shallow={true}>
-                About
-              </Link>
-              {router.pathname === '/' && (
-                <motion.span className='circle' layoutId='circle'></motion.span>
-              )}
-            </li>
-            <li className={router.pathname === '/contact' ? 'active' : ''}>
-              <Link href='/contact' shallow={true}>
-                Contact
-              </Link>
-              {router.pathname === '/contact' && (
-                <motion.span className='circle' layoutId='circle'></motion.span>
-              )}
-            </li>
+            {NavList.map((nav, idx) => (
+              <li
+                key={idx}
+                className={router.pathname === nav.route ? 'active' : ''}
+              >
+                <Link href={nav.route} shallow={true}>
+                  {nav.title.toUpperCase()}
+                </Link>
+                {router.pathname === nav.route && (
+                  <motion.span
+                    className='circle'
+                    layoutId='circle'
+                  ></motion.span>
+                )}
+              </li>
+            ))}
           </ul>
         </nav>
         <Button type='button' onClick={() => dispatch(theme.isDark())}>

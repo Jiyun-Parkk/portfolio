@@ -3,7 +3,14 @@ import Image from 'next/image'
 import { SEO, Stacks, TextAnimation, Timelines, Works } from 'components'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { FlipHorizontalMotion, FlipVerticalMotion, StaggerMotion } from 'motion'
+import {
+  FlipHorizontalMotion,
+  FlipVerticalMotion,
+  ShakeMotion,
+  StaggerMotion,
+} from 'motion'
+import { KeyboardDoubleArrowDown } from '@mui/icons-material'
+import { Button } from '@mui/material'
 
 export const Intro = styled.section<{ isdark: boolean }>`
   height: 100vh;
@@ -71,6 +78,13 @@ export const Intro = styled.section<{ isdark: boolean }>`
       display: none;
     }
   }
+
+  button {
+    color: inherit;
+    svg {
+      font-size: 2rem;
+    }
+  }
 `
 
 export const InfoBox = styled.section<{ isdark: boolean }>`
@@ -86,12 +100,17 @@ export const InfoBox = styled.section<{ isdark: boolean }>`
 
 const Home = () => {
   const isDark = useAppSelector((state) => state.theme.value)
+  const greetings = [
+    '안녕하세요 👋',
+    '배우는 것을 좋아하고',
+    '좋은 코드를 위한 리팩토링을 즐겨합니다',
+    '코드개선 ・ 의사소통 ・ 협업을 잘하는',
+    '프론트 개발자 박지윤입니다',
+  ]
 
   return (
     <>
       <SEO />
-
-      {/* 첫번째 섹션 */}
       <Intro isdark={isDark}>
         <motion.div
           initial='start'
@@ -108,22 +127,13 @@ const Home = () => {
             initial='start'
             whileInView='end'
           >
-            <TextAnimation
-              variants={FlipVerticalMotion}
-              text='배우는 것을 좋아하고'
-            />
-            <TextAnimation
-              variants={FlipVerticalMotion}
-              text='좋은 코드를 위한 리팩토링을 즐겨합니다'
-            />
-            <TextAnimation
-              variants={FlipVerticalMotion}
-              text='코드개선 ・ 의사소통 ・ 협업을'
-            />
-            <TextAnimation
-              variants={FlipVerticalMotion}
-              text='잘하는 개발자 박지윤입니다'
-            />
+            {greetings.map((greet, idx) => (
+              <TextAnimation
+                key={idx}
+                variants={FlipVerticalMotion}
+                text={greet}
+              />
+            ))}
           </motion.div>
         </motion.div>
 
@@ -145,13 +155,24 @@ const Home = () => {
             priority
           />
         </motion.div>
+        {/*<Button
+          component={motion.button}
+          variants={ShakeMotion}
+          initial='start'
+          animate='end'
+          transition={{
+            duration: 0.5,
+            repeatType: 'reverse',
+            repeat: Infinity,
+            ease: 'linear',
+          }}
+          type='button'
+        >
+          <KeyboardDoubleArrowDown />
+        </Button>*/}
       </Intro>
-
-      {/* 두번째 섹션 */}
       <Stacks />
       <Timelines />
-
-      {/* 세번째 섹션 */}
       <Works />
     </>
   )

@@ -79,7 +79,6 @@ const Container = styled(motion.div)<{ isdark: string }>`
   }
   .work-content-box {
     .source-box {
-      margin-top: 20px;
       display: flex;
       gap: 20px;
       a {
@@ -125,7 +124,7 @@ const WorkModal = ({ title }: ModalProps) => {
         </Button>
         <h3 className='work-title'>{title.replace('-', ' ')}</h3>
         <div className='work-content-box'>
-          <h4>프로젝트 내용</h4>
+          <h4>Description</h4>
           <p>{content?.detail}</p>
         </div>
         <div className='work-content-box'>
@@ -133,7 +132,7 @@ const WorkModal = ({ title }: ModalProps) => {
           <p>{content?.stack}</p>
         </div>
         <div className='work-content-box'>
-          <h4>특이 사항</h4>
+          <h4>Points</h4>
           <ul>
             {content?.point.map((point, idx) => (
               <li key={idx}>◉ {point}</li>

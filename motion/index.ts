@@ -58,3 +58,12 @@ export const ShowMotion = {
     opacity: 1,
   },
 }
+
+export const ShakeMotion = {
+  start: {
+    y: -10,
+  },
+  end: {
+    y: 0,
+  },
+}

@@ -17,7 +17,7 @@ export const ContentTitle = ({ title }: { title: string }) => {
       initial='start'
       whileInView='end'
       variants={FlipVerticalMotion}
-      transition={{ delay: 0.2, duration: 0.3 }}
+      transition={{ delay: 0.3, duration: 0.3 }}
     >
       {title}
     </Title>

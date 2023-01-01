@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import styled from 'styled-components'
 
 interface TextAniprops {
   text: string
@@ -14,14 +16,19 @@ interface TextAniprops {
   }
 }
 
+const SplitText = styled(motion.span)`
+  font-size: 20px;
+`
+
 export const TextAnimation = ({ text, variants }: TextAniprops) => {
-  const textArr = text.split('')
+  const [textArr, setTextArr] = useState([''])
+  useEffect(() => setTextArr(text.split('')), [text])
   return (
     <>
-      {textArr.map((text, idx) => (
-        <motion.span variants={variants} key={idx}>
+      {textArr?.map((text, idx) => (
+        <SplitText variants={variants} key={idx}>
           {text}
-        </motion.span>
+        </SplitText>
       ))}
       <br />
     </>

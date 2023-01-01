@@ -113,7 +113,17 @@ export const Works = () => {
       <motion.ul className='about__works-container'>
         {workList.map((work, idx) => (
           <WorkList
-            variants={ShowMotion}
+            variants={{
+              start: {
+                opacity: 0,
+              },
+              end: {
+                opacity: 1,
+                transition: {
+                  delay: 0.3,
+                },
+              },
+            }}
             initial='start'
             whileInView='end'
             key={idx}
