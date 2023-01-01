@@ -17,7 +17,7 @@ export const Intro = styled.section<{ isdark: boolean }>`
     place-self: flex-start;
     line-height: 2;
     font-size: 1rem;
-    padding-bottom: 30px;
+    padding: 30px 0;
     z-index: 2;
 
     p {
@@ -45,6 +45,7 @@ export const Intro = styled.section<{ isdark: boolean }>`
     }
 
     @media (max-width: 1200px) {
+      padding: 0;
       flex: 1;
       place-self: center;
     }
@@ -64,14 +65,10 @@ export const Intro = styled.section<{ isdark: boolean }>`
 
     img {
       flex: 1;
-      margin-bottom: 100px;
     }
 
     @media (max-width: 1200px) {
       display: none;
-      img {
-        display: none;
-      }
     }
   }
 `

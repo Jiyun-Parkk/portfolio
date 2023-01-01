@@ -9,9 +9,8 @@ interface LayoutProps {
 }
 
 const Container = styled(m.main)`
-  padding: 100px 0 150px 0;
   section {
-    padding: 50px 30px;
+    padding: 100px 30px;
   }
 `
 

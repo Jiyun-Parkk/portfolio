@@ -1,12 +1,11 @@
 import { Button, TextField } from '@mui/material'
 import { useAppSelector } from 'hooks'
-import Image from 'next/image'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 import { RegistForm } from 'types/form'
 import { motion } from 'framer-motion'
-import { ShowupMotion } from 'motion'
+import { ShowupMotion, FlipHorizontalMotion } from 'motion'
 
 const Container = styled.section<{ isdark: boolean }>`
   display: flex;
@@ -18,13 +17,24 @@ const Container = styled.section<{ isdark: boolean }>`
   line-height: 2;
 
   .contact__intro-illust {
-    background: ${(props) =>
-      props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    aspect-ratio: 1;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+
+    .illust-circle {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background: ${(props) =>
+        props.isdark ? 'rgba(255, 255, 255, 0.2)' : ' rgba(0, 0, 0, 0.3)'};
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+    }
     img {
+      flex: 1;
       transform: rotateY(180deg);
     }
   }
@@ -75,17 +85,6 @@ const CustomInput = styled(TextField)`
   }
 `
 
-const mainImagVariants = {
-  start: {
-    opacity: 0,
-    rotateY: 180,
-  },
-  end: {
-    opacity: 1,
-    rotateY: 0,
-  },
-}
-
 const Contact = () => {
   const isDark = useAppSelector((state) => state.theme.value)
   const {
@@ -99,6 +98,7 @@ const Contact = () => {
   return (
     <Container isdark={isDark}>
       <div className='contact__intro-illust'>
+        <div className='illust-circle'></div>
         <motion.img
           src='/static/contact.svg'
           width={300}
@@ -106,16 +106,16 @@ const Contact = () => {
           alt='contact'
           initial='start'
           whileInView='end'
-          variants={mainImagVariants}
+          variants={FlipHorizontalMotion}
           transition={{
             duration: 1,
           }}
         />
       </div>
-      <p>
+      <motion.p variants={ShowupMotion} initial='start' whileInView='end'>
         채용 혹은 궁금한 점이 있으시다면 <br />
         아래 폼에서 메일을 보내주세요 :)
-      </p>
+      </motion.p>
       <motion.form
         onSubmit={handleSubmit(onSubmit)}
         variants={ShowupMotion}

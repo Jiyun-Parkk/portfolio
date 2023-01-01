@@ -20,6 +20,12 @@ const Container = styled.div`
     justify-items: center;
     gap: 10px;
   }
+
+  @media (max-width: 750px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 `
 
 const StackList = styled(motion.li)<{ background: string }>`
@@ -59,7 +65,8 @@ export const Stacks = () => {
             key={idx}
             background={stack.background}
             transition={{
-              delay: Math.random() * (0.6 - 0.3) + 0.3,
+              duration: 0.5,
+              delay: Math.random() * (0.6 - 0.2) + 0.2,
             }}
           >
             {stack.title}

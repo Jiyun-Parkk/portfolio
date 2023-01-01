@@ -56,8 +56,5 @@ export const ShowMotion = {
   },
   end: {
     opacity: 1,
-    transition: {
-      delay: 0.2,
-    },
   },
 }

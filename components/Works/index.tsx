@@ -67,7 +67,7 @@ const WorkList = styled(motion.li)<{ thumb: string }>`
     }
   }
   @media (max-width: 1200px) {
-    width: 90%;
+    width: 98%;
     &:hover {
       transform: none;
     }
@@ -122,7 +122,7 @@ export const Works = () => {
               setWorkName(work.title)
               dispatch(modal.isOpen(true))
             }}
-            transition={{ ease: 'linear', duration: 0.2 }}
+            transition={{ ease: 'linear', duration: 0.5 }}
             layoutId={work.title}
           >
             <div className='about__work-title'>
