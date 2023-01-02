@@ -1,6 +1,5 @@
 import { useAppSelector } from 'hooks'
-import Image from 'next/image'
-import { SEO, Stacks, TextAnimation, Timelines, Works } from 'components'
+import { SEO, Skills, TextAnimation, Timelines, Works } from 'components'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { FlipHorizontalMotion, FlipVerticalMotion, StaggerMotion } from 'motion'
@@ -17,7 +16,7 @@ export const Intro = styled.section<{ isdark: boolean }>`
     place-self: flex-start;
     line-height: 2;
     font-size: 1rem;
-    padding: 30px 0;
+    padding: 80px 0;
     z-index: 2;
 
     p {
@@ -49,6 +48,7 @@ export const Intro = styled.section<{ isdark: boolean }>`
       flex: 1;
       place-self: center;
     }
+
     @media (max-width: 750px) {
       p {
         font-size: 2rem;
@@ -153,7 +153,7 @@ const Home = () => {
           />
         </div>
       </Intro>
-      <Stacks />
+      <Skills />
       <Timelines />
       <Works />
     </>

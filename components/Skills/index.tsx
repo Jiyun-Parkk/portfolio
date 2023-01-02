@@ -70,7 +70,7 @@ const StackList = styled(motion.li)<{ background: string }>`
   }
 `
 
-export const Stacks = () => {
+export const Skills = () => {
   const stackList = [
     {
       title: 'HTML',
@@ -163,7 +163,7 @@ export const Stacks = () => {
           paddingBottom: '30px',
         }}
       >
-        <ContentTitle title='Stack' />
+        <ContentTitle title='Skills' />
         <ul ref={ContentsRef} className='stackbox'>
           {stackList.map((stack, idx) => (
             <StackList

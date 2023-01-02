@@ -1,4 +1,9 @@
-import { DarkMode, LightMode } from '@mui/icons-material'
+import {
+  DarkMode,
+  HighlightOffOutlined,
+  LightMode,
+  Menu,
+} from '@mui/icons-material'
 import { Button } from '@mui/material'
 import { NextPage } from 'next'
 import { theme } from 'store/modules'
@@ -56,13 +61,65 @@ const Container = styled.header<{ isdark: boolean }>`
         }
       }
     }
+    button {
+      display: none;
+    }
   }
   button {
-    width: 50px;
-    height: 50px;
+    padding: 20px;
     border-radius: 50%;
     padding: 0;
     aspect-ratio: 1;
+    color: ${(props) => props.theme.text.basic};
+    svg {
+      flex: 1;
+    }
+
+    &.mobile-menubar {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    justify-content: space-between;
+    nav {
+      position: absolute;
+      z-index: 25;
+      top: 0;
+      right: -100%;
+      width: 40%;
+      background-color: ${(props) => props.theme.background.basic};
+      height: 100vh;
+      transition: all 0.5s;
+      ul {
+        padding: 100px 0;
+        flex-direction: column;
+        li {
+          .circle {
+            display: none;
+          }
+        }
+      }
+      button {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        color: ${(props) => props.theme.text.basic};
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      &.active {
+        right: 0;
+      }
+    }
+    button {
+      &.mobile-menubar {
+        display: inline-block;
+      }
+    }
   }
 `
 
@@ -77,8 +134,10 @@ export const Header: NextPage = () => {
   const dispatch = useAppDispatch()
   const isDark = useAppSelector((state) => state.theme.value)
   const headerRef = useRef<HTMLBaseElement>(null)
+  const navRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
-    return scrollY.onChange((scroll) => {
+    scrollY.onChange((scroll) => {
       if (headerRef.current) {
         if (scroll > 0) {
           headerRef.current.classList.add('active')
@@ -91,7 +150,15 @@ export const Header: NextPage = () => {
   return (
     <>
       <Container isdark={isDark} ref={headerRef}>
-        <Link href='/' shallow={true}>
+        <Link
+          href='/'
+          shallow={true}
+          onClick={() => {
+            if (navRef.current) {
+              navRef.current.classList.remove('active')
+            }
+          }}
+        >
           <Image
             src={isDark ? '/static/logo-white.png' : '/static/logo-black.png'}
             width={100}
@@ -100,12 +167,17 @@ export const Header: NextPage = () => {
             priority
           />
         </Link>
-        <nav>
+        <nav ref={navRef}>
           <ul>
             {NavList.map((nav, idx) => (
               <li
                 key={idx}
                 className={router.pathname === nav.route ? 'active' : ''}
+                onClick={() => {
+                  if (navRef.current) {
+                    navRef.current.classList.remove('active')
+                  }
+                }}
               >
                 <Link href={nav.route} shallow={true}>
                   {nav.title.toUpperCase()}
@@ -119,14 +191,37 @@ export const Header: NextPage = () => {
               </li>
             ))}
           </ul>
+          <Button
+            onClick={() => {
+              if (navRef.current) {
+                navRef.current.classList.remove('active')
+              }
+            }}
+          >
+            <HighlightOffOutlined />
+          </Button>
         </nav>
-        <Button type='button' onClick={() => dispatch(theme.isDark())}>
-          {isDark ? (
-            <LightMode style={{ color: 'yellow' }} />
-          ) : (
-            <DarkMode style={{ color: 'darkblue' }} />
-          )}
-        </Button>
+
+        <div>
+          <Button type='button' onClick={() => dispatch(theme.isDark())}>
+            {isDark ? (
+              <LightMode style={{ color: 'yellow' }} />
+            ) : (
+              <DarkMode style={{ color: 'darkblue' }} />
+            )}
+          </Button>
+          <Button
+            type='button'
+            className='mobile-menubar'
+            onClick={() => {
+              if (navRef.current) {
+                navRef.current.classList.add('active')
+              }
+            }}
+          >
+            <Menu />
+          </Button>
+        </div>
       </Container>
     </>
   )

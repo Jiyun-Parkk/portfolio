@@ -1,12 +1,4 @@
 import React from 'react'
-import {
-  Timeline,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineConnector,
-  TimelineContent,
-  TimelineDot,
-} from '@mui/lab'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { ContentTitle } from 'components/ContentTitle'
@@ -17,14 +9,30 @@ const Container = styled.section`
   flex-direction: column;
   justify-items: center;
   align-items: center;
+
   .timeline-box {
-    width: 100%;
+    margin-bottom: 200px;
+
     ul {
-      padding: 0;
-      width: 100%;
-      height: 800px;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 30px;
+
       li {
-        height: 100%;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        span {
+          &:nth-child(1) {
+            width: 180px;
+          }
+          &:nth-child(2) {
+            flex: 1;
+            white-space: nowrap;
+          }
+        }
       }
     }
   }
@@ -42,61 +50,64 @@ const Container = styled.section`
 `
 
 export const Timelines = () => {
-  const timeList = [
-    //{
-    //  date: '2015.01 - 2016.01',
-    //  history: '국민은행 임원비서',
-    //},
-    //{
-    //  date: '2016.04 - 2018.05',
-    //  history: '우리은행 임원비서',
-    //},
-    //{
-    //  date: '2017.09 - 2020.09',
-    //  history: '경영학과 편입 졸업',
-    //},
+  const timeline = [
     {
-      date: '2020.10 - 2021.03',
-      history: 'UI/UX 웹퍼블리셔 과정 수료',
+      title: 'Education',
+      list: [
+        {
+          date: '2020.10 - 2021.03',
+          history: 'UI/UX 웹퍼블리셔 과정 수료',
+        },
+        {
+          date: '2022.07 - 2022.07',
+          history: '원티드 프론트엔드 프리온보딩 챌린지',
+        },
+        {
+          date: '2022.09 - 재학중',
+          history: '방송통신대학교 컴퓨터공학과 편입',
+        },
+      ],
     },
     {
-      date: '2021.05 - 2022.06',
-      history: '(주)아이엠폼 퍼블리셔 근무',
-    },
-    {
-      date: '2022.06 - 2022.12',
-      history: 'Vue 스터디',
-    },
-    {
-      date: '2022.09 - 현재',
-      history: '방송통신대학교 컴퓨터공학과 편입',
+      title: 'Career',
+
+      list: [
+        {
+          date: '2015.01 - 2016.01',
+          history: '국민은행 임원비서 근무',
+        },
+        {
+          date: '2016.04 - 2018.05',
+          history: '우리은행 임원비서 근무',
+        },
+        {
+          date: '2021.05 - 2022.06',
+          history: '아이엠폼 퍼블리셔 근무',
+        },
+      ],
     },
   ]
+
   return (
     <Container>
-      <ContentTitle title='Timeline' />
-      <motion.div
-        variants={ShowupMotion}
-        initial='start'
-        whileInView='end'
-        transition={{ delay: 0.3, duration: 0.5 }}
-        className='timeline-box'
-      >
-        <Timeline position='alternate'>
-          {timeList.map((list, idx) => (
-            <TimelineItem key={idx}>
-              <TimelineSeparator>
-                <TimelineDot />
-                {idx !== timeList.length - 1 && <TimelineConnector />}
-              </TimelineSeparator>
-              <TimelineContent>
-                <p>{list.date}</p>
-                <p>{list.history}</p>
-              </TimelineContent>
-            </TimelineItem>
-          ))}
-        </Timeline>
-      </motion.div>
+      {timeline.map((time, idx) => (
+        <div className='timeline-box' key={idx}>
+          <ContentTitle title={time.title} />
+          <motion.ul
+            variants={ShowupMotion}
+            initial='start'
+            whileInView='end'
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            {time.list.map((list, idx) => (
+              <li key={idx}>
+                <span>{list.date}</span>
+                <span>{list.history}</span>
+              </li>
+            ))}
+          </motion.ul>
+        </div>
+      ))}
     </Container>
   )
 }

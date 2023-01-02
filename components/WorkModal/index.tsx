@@ -19,6 +19,7 @@ const Container = styled(motion.div)<{ isdark: string }>`
   position: relative;
 
   .box {
+    position: relative;
     margin: 0 auto;
     width: 80%;
     border-radius: 20px;
@@ -35,12 +36,13 @@ const Container = styled(motion.div)<{ isdark: string }>`
     }
 
     .modal-close-btn {
-      position: fixed;
+      position: absolute;
+      top: 10px;
+      right: 10px;
       place-self: flex-end;
       color: #fff;
       width: 50px;
       height: 50px;
-
       svg {
         width: 30px;
         height: 30px;
