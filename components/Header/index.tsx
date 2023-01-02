@@ -88,7 +88,7 @@ const Container = styled.header<{ isdark: boolean }>`
       top: 0;
       right: -100%;
       width: 40%;
-      background-color: ${(props) => props.theme.background.basic};
+      background-color: ${(props) => props.theme.background.mobileNav};
       height: 100vh;
       transition: all 0.5s;
       ul {
@@ -101,7 +101,7 @@ const Container = styled.header<{ isdark: boolean }>`
         }
       }
       button {
-        display: block;
+        display: flex;
         position: absolute;
         top: 20px;
         right: 10px;
@@ -117,7 +117,7 @@ const Container = styled.header<{ isdark: boolean }>`
     }
     button {
       &.mobile-menubar {
-        display: inline-block;
+        display: flex;
       }
     }
   }
@@ -202,7 +202,7 @@ export const Header: NextPage = () => {
           </Button>
         </nav>
 
-        <div>
+        <div style={{ display: 'flex' }}>
           <Button type='button' onClick={() => dispatch(theme.isDark())}>
             {isDark ? (
               <LightMode style={{ color: 'yellow' }} />

@@ -5,6 +5,7 @@ export const dark: DefaultTheme = {
     basic: '#181818',
     lighter: '#1d1d1d',
     gray: '#2C3639',
+    mobileNav: '#181818',
   },
   text: {
     basic: '#eeee',
@@ -16,6 +17,7 @@ export const light: DefaultTheme = {
     basic: '#fff',
     lighter: '#FEFCF3',
     gray: '#F0EBE3',
+    mobileNav: '#F0EBE3',
   },
   text: {
     basic: '#263159',
