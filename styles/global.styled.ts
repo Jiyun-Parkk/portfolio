@@ -112,10 +112,12 @@ body {
 body,html{
 	font-family: 'Nanum Gothic', sans-serif;
 	font-size:16px;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   background: ${(props) => props.theme.background.lighter};
   color: ${(props) => props.theme.text.basic};
-  overflow: ${(props) => (props.isOpen ? 'hidden' : 'auto')}
+  //overflow-y: ${(props) => (props.isOpen ? 'hidden' : 'auto')};
+  -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 body::-webkit-scrollbar {
   display:none;
