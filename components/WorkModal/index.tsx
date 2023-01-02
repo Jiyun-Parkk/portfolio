@@ -23,7 +23,7 @@ const Container = styled(motion.div)<{ isdark: string }>`
     width: 80%;
     border-radius: 20px;
     background-color: ${(props) => props.theme.background.lighter};
-    padding: 20px;
+    padding: 20px 50px;
     height: 80vh;
     overflow: scroll;
     display: flex;

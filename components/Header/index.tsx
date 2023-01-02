@@ -67,12 +67,6 @@ const Container = styled.header<{ isdark: boolean }>`
 `
 
 export const Header: NextPage = () => {
-  //const NavList = [
-  //  { title: 'home', route: '/' },
-  //  { title: 'about', route: '/about' },
-  //  { title: 'project', route: '/project' },
-  //  { title: 'contact', route: '/contact' },
-  //]
   const NavList = [
     { title: 'about', route: '/' },
     { title: 'contact', route: '/contact' },

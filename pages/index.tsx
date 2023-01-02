@@ -3,14 +3,7 @@ import Image from 'next/image'
 import { SEO, Stacks, TextAnimation, Timelines, Works } from 'components'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import {
-  FlipHorizontalMotion,
-  FlipVerticalMotion,
-  ShakeMotion,
-  StaggerMotion,
-} from 'motion'
-import { KeyboardDoubleArrowDown } from '@mui/icons-material'
-import { Button } from '@mui/material'
+import { FlipHorizontalMotion, FlipVerticalMotion, StaggerMotion } from 'motion'
 
 export const Intro = styled.section<{ isdark: boolean }>`
   height: 100vh;
@@ -69,7 +62,16 @@ export const Intro = styled.section<{ isdark: boolean }>`
     height: 100%;
     display: flex;
     align-items: flex-end;
-
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 500px;
+      height: 500px;
+      background: #f3c5c5;
+      border-radius: 50%;
+    }
     img {
       flex: 1;
     }
@@ -136,39 +138,20 @@ const Home = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          className='about__intro-illust'
-          initial='start'
-          whileInView='end'
-          variants={FlipHorizontalMotion}
-          transition={{
-            duration: 1,
-          }}
-        >
-          <Image
+        <div className='about__intro-illust'>
+          <motion.img
             src='/static/woman.svg'
             width={300}
             height={300}
             alt='coding woman'
-            className='woman'
-            priority
+            initial='start'
+            whileInView='end'
+            variants={FlipHorizontalMotion}
+            transition={{
+              duration: 1,
+            }}
           />
-        </motion.div>
-        {/*<Button
-          component={motion.button}
-          variants={ShakeMotion}
-          initial='start'
-          animate='end'
-          transition={{
-            duration: 0.5,
-            repeatType: 'reverse',
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-          type='button'
-        >
-          <KeyboardDoubleArrowDown />
-        </Button>*/}
+        </div>
       </Intro>
       <Stacks />
       <Timelines />
