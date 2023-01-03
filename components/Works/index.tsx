@@ -5,12 +5,10 @@ import { useState } from 'react'
 import { modal } from 'store/modules'
 import WorkModal from 'components/WorkModal'
 import { ContentTitle } from 'components/ContentTitle'
-import { ShowMotion } from 'motion'
 
 const Container = styled.section<{ isdark: boolean }>`
   p {
     text-align: center;
-    padding-bottom: 50px;
     line-height: 2;
   }
   .about__works-container {

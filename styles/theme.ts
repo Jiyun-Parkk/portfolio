@@ -6,8 +6,8 @@ export const dark: DefaultTheme = {
     lighter: '#1d1d1d',
     gray: '#2C3639',
     mobileNav: '#181818',
-    bannerTitle: '#263159',
-    bannerContent: '#495579',
+    bannerTitle: '#2C3333',
+    bannerContent: '#1B262C',
   },
   text: {
     basic: '#eeee',
@@ -20,8 +20,8 @@ export const light: DefaultTheme = {
     lighter: '#FEFCF3',
     gray: '#F0EBE3',
     mobileNav: '#F0EBE3',
-    bannerTitle: '#D0B8A8',
-    bannerContent: '#DFD3C3',
+    bannerTitle: '#AD8B73',
+    bannerContent: '#F8EDE3',
   },
   text: {
     basic: '#263159',

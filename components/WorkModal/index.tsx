@@ -81,9 +81,14 @@ const Container = styled(motion.div)<{ isdark: string }>`
     }
   }
   .work-content-box {
+    strong {
+      font-weight: 600;
+    }
+
     .source-box {
       display: flex;
       gap: 20px;
+
       a {
         display: flex;
         justify-items: center;
@@ -131,7 +136,18 @@ const WorkModal = ({ title }: ModalProps) => {
           <p>{content?.detail}</p>
         </div>
         <div className='work-content-box'>
-          <h4>Stack</h4>
+          <h4>Contribution</h4>
+          <ul>
+            <li>
+              <strong>구성원:</strong> {content?.contribution.team}
+            </li>
+            <li>
+              <strong>기여도:</strong> {content?.contribution.contribute}
+            </li>
+          </ul>
+        </div>
+        <div className='work-content-box'>
+          <h4>Used Skills</h4>
           <p>{content?.stack}</p>
         </div>
         <div className='work-content-box'>
@@ -142,6 +158,7 @@ const WorkModal = ({ title }: ModalProps) => {
             ))}
           </ul>
         </div>
+
         <div className='work-content-box'>
           <h4>Source</h4>
           <div className='source-box'>

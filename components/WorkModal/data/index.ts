@@ -1,6 +1,10 @@
 interface WorkContentType {
   [key: string]: {
     detail: string
+    contribution: {
+      team: string
+      contribute: string
+    }
     stack: string
     point: string[]
     source: {
@@ -15,6 +19,7 @@ const workContents: WorkContentType = {
   ['Coin-Tracker']: {
     detail:
       'Coinpaprika에서 무료로 제공 되는 API를 가공하여 1위~100위까지의 코인 리스트들을 보여주고, 개별 코인 페이지에서는 현재 가격 그래프와 시장 상황을 확인 해볼 수 있습니다.',
+    contribution: { team: '1인 개인 프로젝트', contribute: '100%' },
     stack: 'React , Typescript, Recoil, React-query, Styled-components',
     point: [
       'styled-components 라이브러리로 Dark / Light 모드 구현',
@@ -32,6 +37,7 @@ const workContents: WorkContentType = {
   ['Portfolio']: {
     detail:
       '개인 이력과 작업물들을 보여주는 페이지입니다. 포트폴리오인 만큼 Next.js를 활용하여 SEO 최적화에 신경썼습니다.',
+    contribution: { team: '1인 개인 프로젝트', contribute: '100%' },
     stack: 'NextJS , Typescript, Redux, Styled-components, MUI, Framer-motion',
     point: [
       'styled-components 라이브러리로 Dark / Light 모드 구현',
@@ -49,6 +55,10 @@ const workContents: WorkContentType = {
   ['Oz-Training']: {
     detail:
       '홈트족을 돕기위한 운동동기부여 서비스 입니다. 프로젝트 리딩 경험, 팀협업 경험을 쌓기 위해 직접 팀 빌딩을 하여 프로젝트를 리딩 하고 있습니다.',
+    contribution: {
+      team: '4인 팀프로젝트 (프론트개발자 3명 , 기획자 1명)',
+      contribute: '기획 50% 회원가입기능 구현 100%',
+    },
     stack:
       'NextJS , Typescript, Recoil, React-query, Styled-components, Firebase',
     point: [
