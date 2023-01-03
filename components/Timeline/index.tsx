@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { ContentTitle } from 'components/ContentTitle'
@@ -15,6 +14,7 @@ const Container = styled.section`
     margin-bottom: 200px;
 
     ul {
+      width: 100%;
       display: flex;
       justify-items: center;
       align-items: center;
@@ -48,12 +48,12 @@ const Container = styled.section`
   }
 
   @media (max-width: 750px) {
-    flex-direction: column;
-    gap: 40px;
-    ul {
-      li {
-        width: 100%;
-        align-self: center;
+    .timeline-box {
+      ul {
+        li {
+          width: 100%;
+          align-self: center;
+        }
       }
     }
   }

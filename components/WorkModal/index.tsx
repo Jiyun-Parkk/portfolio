@@ -57,6 +57,7 @@ const Container = styled(motion.div)<{ isdark: string }>`
   @media (max-width: 750px) {
     .box {
       width: 90%;
+      padding: 20px;
     }
   }
 
