@@ -2,6 +2,10 @@
 
 개인 작업물들이 정리되어 있는 포트폴리오 입니다.
 
+## 샘플 화면
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/72537762/210367868-358c7d58-56cf-427b-a639-663495a396a8.gif)
+
 ## 사용 기술
 
 <img src ="https://img.shields.io/badge/nextjs-000000.svg?&style=for-the-badge&logo=next.js&logoColor=white" align="center"/>
