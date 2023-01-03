@@ -7,6 +7,8 @@ declare module 'styled-components' {
       lighter: string
       gray: string
       mobileNav: string
+      bannerTitle: string
+      bannerContent: string
     }
     text: {
       basic: string

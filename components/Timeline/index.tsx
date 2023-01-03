@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { ContentTitle } from 'components/ContentTitle'
@@ -11,6 +11,7 @@ const Container = styled.section`
   align-items: center;
 
   .timeline-box {
+    width: 100%;
     margin-bottom: 200px;
 
     ul {
@@ -18,19 +19,28 @@ const Container = styled.section`
       justify-items: center;
       align-items: center;
       flex-direction: column;
-      gap: 30px;
+      gap: 40px;
 
       li {
-        width: 100%;
+        width: 60%;
         display: flex;
-        gap: 20px;
-        span {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+
+        p {
+          padding: 20px;
           &:nth-child(1) {
-            width: 180px;
+            width: 100%;
+            height: 100%;
+            font-weight: 600;
+            border-radius: 10px 10px 0 0;
+            background-color: ${(props) => props.theme.background.bannerTitle};
           }
           &:nth-child(2) {
-            flex: 1;
-            white-space: nowrap;
+            background-color: ${(props) =>
+              props.theme.background.bannerContent};
+            overflow: hidden;
           }
         }
       }
@@ -100,10 +110,10 @@ export const Timelines = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             {time.list.map((list, idx) => (
-              <li key={idx}>
-                <span>{list.date}</span>
-                <span>{list.history}</span>
-              </li>
+              <motion.li key={idx}>
+                <p>{list.date}</p>
+                <p>{list.history}</p>
+              </motion.li>
             ))}
           </motion.ul>
         </div>

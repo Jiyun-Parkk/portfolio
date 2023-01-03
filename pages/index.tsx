@@ -69,7 +69,7 @@ export const Intro = styled.section<{ isdark: boolean }>`
       display: block;
       width: 500px;
       height: 500px;
-      background: #f3c5c5;
+      background: rgba(0, 0, 0, 0.5);
       border-radius: 50%;
     }
     img {
