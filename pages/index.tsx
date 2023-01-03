@@ -1,8 +1,8 @@
-import { useAppSelector } from 'hooks'
 import { SEO, Skills, TextAnimation, Timelines, Works } from 'components'
+import { FlipHorizontalMotion, FlipVerticalMotion, StaggerMotion } from 'motion'
+import { useAppSelector } from 'hooks'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { FlipHorizontalMotion, FlipVerticalMotion, StaggerMotion } from 'motion'
 
 export const Intro = styled.section<{ isdark: boolean }>`
   height: 100vh;

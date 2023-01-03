@@ -1,14 +1,14 @@
 import type { AppProps } from 'next/app'
+import Script from 'next/script'
+import { useRouter } from 'next/router'
 import { Layout } from 'components'
 import { useAppSelector } from 'hooks'
+import * as gtag from 'lib/gtag'
 import { dark, light } from 'styles/theme'
 import GlobalStyle from 'styles/global.styled'
 import { ThemeProvider } from 'styled-components'
 import wrapper from 'store'
 import { useEffect } from 'react'
-import * as gtag from 'lib/gtag'
-import { useRouter } from 'next/router'
-import Script from 'next/script'
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
