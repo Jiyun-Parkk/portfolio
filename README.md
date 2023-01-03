@@ -4,7 +4,7 @@
 
 ## 샘플 화면
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/72537762/210367868-358c7d58-56cf-427b-a639-663495a396a8.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/72537762/210368353-61e7b532-365f-4fa8-b108-4f6d51b36d9d.gif)
 
 ## 사용 기술
 
