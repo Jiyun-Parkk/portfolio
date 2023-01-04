@@ -70,7 +70,7 @@ const workContents: WorkContentType = {
       'Firebase Database 활용하여 유저 세부정보 저장',
     ],
     source: {
-      git: 'https://github.com/jiyun-par/portfolio',
+      git: 'https://github.com/Oz-Training-Club/oz-training',
       link: '',
       notion:
         'https://oz-training.notion.site/22d39bd0360940d3bcddd177cbd3141d',
