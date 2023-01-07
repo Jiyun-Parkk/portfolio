@@ -9,7 +9,7 @@ export const FlipVerticalMotion = {
     y: 0,
     rotateX: 0,
   },
-}
+};
 
 export const FlipHorizontalMotion = {
   start: {
@@ -20,7 +20,7 @@ export const FlipHorizontalMotion = {
     opacity: 1,
     rotateY: 0,
   },
-}
+};
 
 export const StaggerMotion = {
   start: {
@@ -33,11 +33,11 @@ export const StaggerMotion = {
     y: 0,
     rotateX: 0,
     transition: {
+      when: "beforeChildren",
       staggerChildren: 0.05,
-      delay: 1,
     },
   },
-}
+};
 
 export const ShowupMotion = {
   start: {
@@ -48,7 +48,7 @@ export const ShowupMotion = {
     opacity: 1,
     y: 0,
   },
-}
+};
 
 export const ShowMotion = {
   start: {
@@ -57,7 +57,7 @@ export const ShowMotion = {
   end: {
     opacity: 1,
   },
-}
+};
 
 export const ShakeMotion = {
   start: {
@@ -66,4 +66,4 @@ export const ShakeMotion = {
   end: {
     y: 0,
   },
-}
+};

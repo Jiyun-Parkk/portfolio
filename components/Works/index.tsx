@@ -1,10 +1,10 @@
-import styled from 'styled-components'
-import { useAppDispatch, useAppSelector } from 'hooks'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
-import { modal } from 'store/modules'
-import WorkModal from 'components/WorkModal'
-import { ContentTitle } from 'components/ContentTitle'
+import styled from "styled-components";
+import { useAppDispatch, useAppSelector } from "hooks";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { modal } from "store/modules";
+import WorkModal from "components/Modal";
+import { ContentTitle } from "components/ContentTitle";
 
 const Container = styled.section<{ isdark: boolean }>`
   p {
@@ -21,14 +21,14 @@ const Container = styled.section<{ isdark: boolean }>`
       flex-direction: column;
     }
   }
-`
+`;
 
 const WorkList = styled(motion.li)<{ thumb: string }>`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-items: center;
+
   width: 100%;
   height: 400px;
   background: ${(props) => `url(${props.thumb}) no-repeat center / cover`};
@@ -45,7 +45,7 @@ const WorkList = styled(motion.li)<{ thumb: string }>`
     height: 100%;
     border-radius: 20px;
     background: rgba(0, 0, 0, 0.5);
-    content: '';
+    content: "";
     display: block;
   }
   .about__work-title {
@@ -70,7 +70,7 @@ const WorkList = styled(motion.li)<{ thumb: string }>`
       transform: none;
     }
   }
-`
+`;
 const Overlay = styled(motion.div)`
   position: fixed;
   z-index: 25;
@@ -80,35 +80,34 @@ const Overlay = styled(motion.div)`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-items: center;
-`
+`;
 const dimVariant = {
-  hidden: { backgroundColor: 'rgba(0, 0, 0, 0)' },
-  visible: { backgroundColor: 'rgba(0, 0, 0, 0.5)' },
+  hidden: { backgroundColor: "rgba(0, 0, 0, 0)" },
+  visible: { backgroundColor: "rgba(0, 0, 0, 0.5)" },
   exit: {
-    backgroundColor: 'rgba(0, 0, 0, 0)',
+    backgroundColor: "rgba(0, 0, 0, 0)",
     transition: {
-      ease: 'linear',
+      ease: "linear",
       duration: 0.5,
     },
   },
-}
+};
 
 export const Works = () => {
-  const [workName, setWorkName] = useState('')
+  const [workName, setWorkName] = useState("");
   const workList = [
-    { title: 'Coin-Tracker', thumb: '/static/cointracker.png' },
-    { title: 'Portfolio', thumb: '/static/portfolio.png' },
-    { title: 'Oz-Training', thumb: '/static/oztraining.png' },
-  ]
-  const isDark = useAppSelector((state) => state.theme.value)
-  const dispatch = useAppDispatch()
+    { title: "Coin-Tracker", thumb: "/static/cointracker.png" },
+    { title: "Portfolio", thumb: "/static/portfolio.png" },
+    { title: "Oz-Training", thumb: "/static/oztraining.png" },
+  ];
+  const isDark = useAppSelector((state) => state.theme.value);
+  const dispatch = useAppDispatch();
 
   return (
     <Container isdark={isDark}>
-      <ContentTitle title='Project' />
+      <ContentTitle title="Project" />
 
-      <motion.ul className='about__works-container'>
+      <motion.ul className="about__works-container">
         {workList.map((work, idx) => (
           <WorkList
             variants={{
@@ -123,22 +122,22 @@ export const Works = () => {
                 },
               },
             }}
-            initial='start'
+            initial="start"
             exit={{
               zIndex: 5,
             }}
-            whileInView='end'
+            whileInView="end"
             key={idx}
             thumb={work.thumb}
             onClick={() => {
-              setWorkName(work.title)
-              dispatch(modal.isOpen(true))
+              setWorkName(work.title);
+              dispatch(modal.isOpen(true));
             }}
-            transition={{ ease: 'linear', duration: 0.1 }}
+            transition={{ ease: "linear", duration: 0.1 }}
             layoutId={work.title}
           >
-            <div className='about__work-title'>
-              <h3>{work.title.replace('-', ' ')}</h3>
+            <div className="about__work-title">
+              <h3>{work.title.replace("-", " ")}</h3>
               <p>Click here</p>
             </div>
           </WorkList>
@@ -147,14 +146,14 @@ export const Works = () => {
       <AnimatePresence>
         {workName ? (
           <Overlay
-            className='dim'
+            className="dim"
             variants={dimVariant}
-            initial='hidden'
-            animate='visible'
-            exit='exit'
+            initial="hidden"
+            animate="visible"
+            exit="exit"
             onClick={() => {
-              setWorkName('')
-              dispatch(dispatch(modal.isOpen(false)))
+              setWorkName("");
+              dispatch(dispatch(modal.isOpen(false)));
             }}
           >
             <WorkModal title={workName} />
@@ -162,5 +161,5 @@ export const Works = () => {
         ) : null}
       </AnimatePresence>
     </Container>
-  )
-}
+  );
+};

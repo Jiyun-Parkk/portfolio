@@ -1,17 +1,16 @@
-import Footer from 'components/Footer'
-import { Header } from 'components/Header'
-import { ReactElement } from 'react'
-import styled from 'styled-components'
+import styled from "styled-components";
+import { Header, Footer } from "components";
+import { ReactElement } from "react";
 
 interface LayoutProps {
-  children: ReactElement
+  children: ReactElement;
 }
 
 const Container = styled.main`
   section {
     padding: 50px 30px;
   }
-`
+`;
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
@@ -20,5 +19,5 @@ export const Layout = ({ children }: LayoutProps) => {
       <Container>{children}</Container>
       <Footer />
     </>
-  )
-}
+  );
+};
