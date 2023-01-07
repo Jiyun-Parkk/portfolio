@@ -7,6 +7,7 @@ interface LayoutProps {
 }
 
 const Container = styled.main`
+  position: relative;
   section {
     padding: 50px 30px;
   }

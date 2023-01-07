@@ -1,7 +1,7 @@
 export const FlipVerticalMotion = {
   start: {
     opacity: 0,
-    y: 20,
+    y: -10,
     rotateX: 180,
   },
   end: {
@@ -25,7 +25,7 @@ export const FlipHorizontalMotion = {
 export const StaggerMotion = {
   start: {
     opacity: 0,
-    y: 20,
+    y: -20,
     rotateX: 180,
   },
   end: {
@@ -65,5 +65,17 @@ export const ShakeMotion = {
   },
   end: {
     y: 0,
+  },
+};
+
+export const dimVariant = {
+  hidden: { backgroundColor: "rgba(0, 0, 0, 0)" },
+  visible: { backgroundColor: "rgba(0, 0, 0, 0.5)" },
+  exit: {
+    backgroundColor: "rgba(0, 0, 0, 0)",
+    transition: {
+      ease: "linear",
+      duration: 0.5,
+    },
   },
 };

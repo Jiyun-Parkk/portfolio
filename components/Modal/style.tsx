@@ -2,51 +2,46 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const Container = styled(motion.div)<{ isdark: string }>`
-  flex: 1;
+  position: fixed;
+  top: 10%;
+  left: 10%;
   line-height: 2;
-  position: relative;
+  width: 80%;
+  border-radius: 20px;
+  background-color: ${(props) => props.theme.background.lighter};
+  padding: 20px 50px;
+  height: 80vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 30;
 
-  .box {
-    position: relative;
-    margin: 0 auto;
-    width: 80%;
-    border-radius: 20px;
-    background-color: ${(props) => props.theme.background.lighter};
-    padding: 20px 50px;
-    height: 80vh;
-    overflow: scroll;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  .modal-close-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    place-self: flex-end;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
 
-    p {
-      text-align: left;
-    }
-
-    .modal-close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      place-self: flex-end;
-      color: #fff;
-      width: 50px;
-      height: 50px;
-      svg {
-        width: 30px;
-        height: 30px;
-        fill: ${(props) => props.theme.text.point};
-      }
-    }
-
-    &::-webkit-scrollbar {
-      display: none;
+    svg {
+      width: 30px;
+      height: 30px;
+      fill: ${(props) => props.theme.text.point};
     }
   }
-  @media (max-width: 750px) {
-    .box {
-      width: 90%;
-      padding: 20px;
-    }
+
+  p {
+    text-align: left;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 
   /* 컨텐츠 */
@@ -88,5 +83,11 @@ export const Container = styled(motion.div)<{ isdark: string }>`
         }
       }
     }
+  }
+
+  @media (max-width: 750px) {
+    width: 90%;
+    left: 5%;
+    padding: 20px;
   }
 `;

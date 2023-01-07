@@ -1,16 +1,20 @@
 import { Container } from "./style";
-import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { useAppSelector } from "hooks";
-import { HighlightOffOutlined, GitHub, LinkOutlined, RateReview } from "@mui/icons-material";
+import { GitHub, HighlightOffOutlined, LinkOutlined, RateReview } from "@mui/icons-material";
 import workContents from "./data";
-import { Button } from "@mui/material";
+import { Dispatch, SetStateAction } from "react";
+import { useAppDispatch } from "hooks";
+import { modal } from "store/modules";
 
 interface ModalProps {
   title: string;
+  setWorkName: Dispatch<SetStateAction<string | null>>;
 }
 
-const WorkModal = ({ title }: ModalProps) => {
+export const Modal = ({ title, setWorkName }: ModalProps) => {
   const isDark = useAppSelector((state) => state.theme.value);
+  const dispatch = useAppDispatch();
   let content;
 
   switch (title) {
@@ -26,12 +30,23 @@ const WorkModal = ({ title }: ModalProps) => {
   }
 
   return (
-    <Container isdark={isDark.toString()}>
-      <motion.div className="box" layoutId={title} transition={{ ease: "linear", duration: 0.2 }}>
-        <Button type="button" className="modal-close-btn">
-          <HighlightOffOutlined />
-        </Button>
+    <AnimatePresence>
+      <Container
+        isdark={isDark.toString()}
+        layoutId={title}
+        transition={{ ease: "easeInOut", duration: 0.3 }}
+      >
         <h3 className="work-title">{title.replace("-", " ")}</h3>
+        <button
+          type="button"
+          className="modal-close-btn"
+          onClick={() => {
+            setWorkName(null);
+            dispatch(modal.isOpen(false));
+          }}
+        >
+          <HighlightOffOutlined />
+        </button>
         <div className="work-content-box">
           <h4>Description</h4>
           <p>{content?.detail}</p>
@@ -59,7 +74,6 @@ const WorkModal = ({ title }: ModalProps) => {
             ))}
           </ul>
         </div>
-
         <div className="work-content-box">
           <h4>Source</h4>
           <div className="source-box">
@@ -81,9 +95,7 @@ const WorkModal = ({ title }: ModalProps) => {
             )}
           </div>
         </div>
-      </motion.div>
-    </Container>
+      </Container>
+    </AnimatePresence>
   );
 };
-
-export default WorkModal;

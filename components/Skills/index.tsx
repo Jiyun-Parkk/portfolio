@@ -6,36 +6,33 @@ import { Lightbulb } from "@mui/icons-material";
 
 export const Skills = () => {
   return (
-    <Container listlength={stackList.length}>
-      <div>
-        <ContentTitle title="Skills" />
-        <ul className="stackbox">
-          {stackList.map((stack, idx) => (
-            <StackList
-              variants={ShowMotion}
-              initial="start"
-              whileInView="end"
-              key={idx}
-              background={stack.background}
-              transition={{
-                duration: 0.5,
-                delay: 0.2,
-              }}
-            >
-              <div>
-                <ul>
-                  {stack.point.map((point, idx) => (
-                    <li key={idx}>
-                      <Lightbulb /> {point}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <h4>{stack.title}</h4>
-            </StackList>
-          ))}
-        </ul>
-      </div>
+    <Container>
+      <ContentTitle title="Skills" />
+      <ul className="stackbox">
+        {stackList.map((stack, idx) => (
+          <StackList
+            variants={ShowMotion}
+            initial="start"
+            whileInView="end"
+            key={idx}
+            background={stack.background}
+            transition={{
+              duration: 0.5,
+            }}
+          >
+            <div>
+              <ul>
+                {stack.point.map((point, idx) => (
+                  <li key={idx}>
+                    <Lightbulb /> {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <h4>{stack.title}</h4>
+          </StackList>
+        ))}
+      </ul>
     </Container>
   );
 };

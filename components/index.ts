@@ -8,3 +8,4 @@ export * from "./Works";
 export * from "./SEO";
 export * from "./ContentTitle";
 export * from "./TextAnimation";
+export * from "./Modal";

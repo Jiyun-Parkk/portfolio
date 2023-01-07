@@ -1,32 +1,34 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const Container = styled(motion.div)<{ listlength: number }>`
-  /*height: 600vh;*/
-  margin-bottom: 200px;
+export const Container = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  margin: 200px 0;
+  align-items: center;
 
   .stackbox {
+    width: 100%;
     padding: 0 40px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    gap: 30px;
+    gap: 150px;
     flex-wrap: wrap;
 
-    /*@media (max-width: 1440px) {
-      width: ${(props) => `calc(${props.listlength * 330}px - 70vw)`};
-    }
     @media (max-width: 1200px) {
-      width: ${(props) => `calc(${props.listlength * 330}px - 60vw)`};
+      grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: 750px) {
-      width: ${(props) => `calc(${props.listlength * 330}px + 2vw)`};
-    }*/
+
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 `;
 
 export const StackList = styled(motion.li)<{ background: string }>`
-  place-self: flex-start;
-  height: 300px;
+  width: 100%;
+  height: 200px;
   background: ${(props) => props.background};
   text-align: center;
   font-weight: bolder;
@@ -45,9 +47,9 @@ export const StackList = styled(motion.li)<{ background: string }>`
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: ${(props) => props.theme.text.basic};
   }
+
   div {
     margin: 30px 20px;
-    width: 300px;
     height: 100%;
     background: ${(props) => props.theme.background.gray};
     border-radius: 5px;
@@ -56,6 +58,7 @@ export const StackList = styled(motion.li)<{ background: string }>`
     padding: 10px;
     line-height: 2;
     color: ${(props) => props.theme.text.basic};
+
     ul {
       display: flex;
       flex-direction: column;

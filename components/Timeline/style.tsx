@@ -19,7 +19,7 @@ export const Container = styled.section`
       gap: 40px;
 
       li {
-        width: 300px;
+        width: 30%;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -32,17 +32,28 @@ export const Container = styled.section`
             height: 100%;
             font-weight: 600;
             border-radius: 10px 10px 0 0;
-            background-color: ${(props) => props.theme.background.bannerTitle};
+            border: 1px solid ${(props) => props.theme.text.basic};
           }
           &:nth-child(2) {
-            background-color: ${(props) => props.theme.background.bannerContent};
+            color: #fff;
+            background-color: #263159;
             overflow: hidden;
+            border-radius: 0 0 10px 10px;
           }
         }
       }
     }
   }
 
+  @media (max-width: 1200px) {
+    .timeline-box {
+      ul {
+        li {
+          width: 50%;
+        }
+      }
+    }
+  }
   @media (max-width: 750px) {
     .timeline-box {
       ul {
