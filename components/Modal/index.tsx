@@ -2,8 +2,8 @@ import { Container } from "./style";
 import { AnimatePresence } from "framer-motion";
 import { useAppSelector } from "hooks";
 import { GitHub, HighlightOffOutlined, LinkOutlined, RateReview } from "@mui/icons-material";
-import workContents from "./data";
-import { Dispatch, SetStateAction } from "react";
+import workContents, { WorkType } from "./data";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useAppDispatch } from "hooks";
 import { modal } from "store/modules";
 
@@ -15,19 +15,11 @@ interface ModalProps {
 export const Modal = ({ title, setWorkName }: ModalProps) => {
   const isDark = useAppSelector((state) => state.theme.value);
   const dispatch = useAppDispatch();
-  let content;
+  const [content, setContent] = useState<WorkType | null>(null);
 
-  switch (title) {
-    case "Coin-Tracker":
-      content = workContents["Coin-Tracker"];
-      break;
-    case "Portfolio":
-      content = workContents["Portfolio"];
-      break;
-    case "Oz-Training":
-      content = workContents["Oz-Training"];
-      break;
-  }
+  useEffect(() => {
+    setContent(workContents[title]);
+  }, [title]);
 
   return (
     <AnimatePresence>

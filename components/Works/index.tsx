@@ -12,6 +12,7 @@ export const Works = () => {
     { title: "Coin-Tracker", thumb: "/static/cointracker.png" },
     { title: "Portfolio", thumb: "/static/portfolio.png" },
     { title: "Oz-Training", thumb: "/static/oztraining.png" },
+    { title: "Export-JSON", thumb: "/static/jsonExport.png" },
   ];
   const isDark = useAppSelector((state) => state.theme.value);
   const dispatch = useAppDispatch();
