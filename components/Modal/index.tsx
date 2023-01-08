@@ -6,6 +6,8 @@ import workContents, { WorkType } from "./data";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useAppDispatch } from "hooks";
 import { modal } from "store/modules";
+import { FaNpm } from "react-icons/fa";
+import { RxNotionLogo } from "react-icons/rx";
 
 interface ModalProps {
   title: string;
@@ -81,8 +83,14 @@ export const Modal = ({ title, setWorkName }: ModalProps) => {
             )}
             {content?.source.notion && (
               <a href={content?.source.notion} target="_blank" rel="referrer noreferrer">
-                <RateReview />
+                <RxNotionLogo />
                 <span>Notion</span>
+              </a>
+            )}
+            {content?.source.npm && (
+              <a href={content?.source.npm} target="_blank" rel="referrer noreferrer">
+                <FaNpm />
+                <span>NPM PKG</span>
               </a>
             )}
           </div>

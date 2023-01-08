@@ -10,6 +10,7 @@ export interface WorkType {
     git: string;
     link?: string;
     notion?: string;
+    npm?: string;
   };
 }
 
@@ -26,6 +27,7 @@ interface WorksType {
       git: string;
       link?: string;
       notion?: string;
+      npm?: string;
     };
   };
 }
@@ -98,6 +100,8 @@ const workContents: WorksType = {
     },
     stack: "HTML , CSS, Javascript, Node.js, Express",
     point: [
+      "npm package 배포, 보일러플레이트로 제작",
+      "npx create-export-json my-app 으로 설치",
       "Class를 사용하여 모듈식으로(UI 컴포넌트화) 작업",
       "Node.js와 Express를 활용한 간단한 서버 구축",
       "input interface에서 작성한 데이터를 post로 서버에 전송",
@@ -106,7 +110,7 @@ const workContents: WorksType = {
     ],
     source: {
       git: "https://github.com/jiyun-par/export-json-module",
-      link: "",
+      npm: "https://www.npmjs.com/package/create-export-json",
     },
   },
 };
