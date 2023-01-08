@@ -34,7 +34,7 @@ export const StaggerMotion = {
     rotateX: 0,
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.05,
+      staggerChildren: 0.025,
     },
   },
 };

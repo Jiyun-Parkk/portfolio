@@ -71,4 +71,17 @@ export const StackList = styled(motion.li)<{ background: string }>`
       }
     }
   }
+
+  @media (max-width: 800px) {
+    h4 {
+      font-size: 1.5rem;
+    }
+    div {
+      ul {
+        li {
+          font-size: 15px;
+        }
+      }
+    }
+  }
 `;

@@ -12,17 +12,17 @@ const stackList = [
   {
     title: "Javascript",
     background: "#FF9E0F",
-    point: ["ES6문법 사용", "class로 모듈화하여 개발", "다양한 배열 메소드를 활용"],
+    point: ["ES6문법 사용", "다양한 배열 메소드를 활용"],
   },
   {
     title: "Typescript",
     background: "#071D49",
-    point: ["타입스크립트를 사용하는 의미를 이해", "리액트와 병행  개발 ", "캡슐화, 추상화 이해"],
+    point: ["Typescript를 사용하는 의미를 이해", "리액트와 병행  개발 "],
   },
   {
     title: "React",
     background: "#61DAFB",
-    point: ["SPA에 대한 이해와 라이프사이클을 고려한 개발", "UI의 컴포넌트화 대한 깊은 고민"],
+    point: ["SPA, MPA에 대한 이해", "UI의 컴포넌트화 대한 깊은 고민"],
   },
   {
     title: "Next.js",
@@ -37,7 +37,7 @@ const stackList = [
   {
     title: "Styled-components",
     background: "#DB7093",
-    point: ["Style 컴포넌트화 코드의 재사용성을 향상", "다크모드와 라이트모드 구현"],
+    point: ["Style 컴포넌트화, 코드의 재사용성을 향상", "다크모드와 라이트모드 구현"],
   },
   {
     title: "Framer-motion",
