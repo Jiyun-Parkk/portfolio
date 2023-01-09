@@ -1,6 +1,7 @@
 import { Overlay } from "components";
 import { Container } from "./style";
 import { useAppDispatch, useAppSelector } from "hooks";
+import { ShowMotion } from "motion";
 import { theme } from "store/modules";
 import { DarkMode, HighlightOffOutlined, LightMode, Menu } from "@mui/icons-material";
 import { Button } from "@mui/material";
@@ -110,7 +111,7 @@ export const Header: NextPage = () => {
             <Menu />
           </Button>
         </div>
-        {isMobileMenu ? <Overlay /> : null}
+        {isMobileMenu ? <Overlay variants={ShowMotion} initial="start" animate="end" /> : null}
       </Container>
     </>
   );
