@@ -1,5 +1,5 @@
-import { Container, WorkList, Overlay } from "./style";
-import { Modal, ContentTitle } from "components";
+import { Container, WorkList } from "./style";
+import { Modal, ContentTitle, Overlay } from "components";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { motion } from "framer-motion";
 import { modal } from "store/modules";

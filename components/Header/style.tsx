@@ -70,12 +70,13 @@ export const Container = styled.header<{ isdark: boolean }>`
       height: 50px;
     }
   }
+
   @media (max-width: 1200px) {
     justify-content: space-between;
 
     nav {
       position: absolute;
-      z-index: 25;
+      z-index: 30;
       top: 0;
       right: -100%;
       width: 40%;

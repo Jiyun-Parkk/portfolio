@@ -1,3 +1,4 @@
+import { Overlay } from "components";
 import { Container } from "./style";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { theme } from "store/modules";
@@ -7,7 +8,7 @@ import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll } from "framer-motion";
 
 export const Header: NextPage = () => {
@@ -17,6 +18,7 @@ export const Header: NextPage = () => {
   const isDark = useAppSelector((state) => state.theme.value);
   const headerRef = useRef<HTMLBaseElement>(null);
   const navRef = useRef<HTMLDivElement>(null);
+  const [isMobileMenu, setIsMobileMenu] = useState(false);
   const NavList = [
     { title: "about", route: "/" },
     { title: "contact", route: "/contact" },
@@ -63,6 +65,7 @@ export const Header: NextPage = () => {
                   if (navRef.current) {
                     navRef.current.classList.remove("active");
                   }
+                  setIsMobileMenu(false);
                 }}
               >
                 <Link href={nav.route} shallow={true}>
@@ -79,6 +82,7 @@ export const Header: NextPage = () => {
               if (navRef.current) {
                 navRef.current.classList.remove("active");
               }
+              setIsMobileMenu(false);
             }}
           >
             <HighlightOffOutlined />
@@ -100,11 +104,13 @@ export const Header: NextPage = () => {
               if (navRef.current) {
                 navRef.current.classList.add("active");
               }
+              setIsMobileMenu(true);
             }}
           >
             <Menu />
           </Button>
         </div>
+        {isMobileMenu ? <Overlay /> : null}
       </Container>
     </>
   );
