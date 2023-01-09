@@ -16,12 +16,13 @@ export const Container = styled.header<{ isdark: boolean }>`
   }
 
   nav {
-    padding-left: 20px;
+    padding-right: 20px;
     flex: 1;
 
     ul {
       display: flex;
       gap: 30px;
+      justify-content: flex-end;
 
       li {
         position: relative;
