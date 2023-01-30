@@ -45,6 +45,7 @@ export const Container = styled(motion.div)<{ isdark: string }>`
     background-color: ${(props) => props.theme.background.mobileNav};
 
     .work-title {
+      white-space: nowrap;
       font-size: 30px;
       font-weight: bolder;
       border-bottom: 1px solid
@@ -97,6 +98,6 @@ export const Container = styled(motion.div)<{ isdark: string }>`
   @media (max-width: 750px) {
     width: 90%;
     left: 5%;
-    padding: 20px;
+    /*padding: 20px;*/
   }
 `;
