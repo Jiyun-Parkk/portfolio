@@ -30,17 +30,19 @@ export const Modal = ({ title, setWorkName }: ModalProps) => {
         layoutId={title}
         transition={{ ease: "easeInOut", duration: 0.3 }}
       >
-        <h3 className="work-title">{title.replace("-", " ")}</h3>
-        <button
-          type="button"
-          className="modal-close-btn"
-          onClick={() => {
-            setWorkName(null);
-            dispatch(modal.isOpen(false));
-          }}
-        >
-          <HighlightOffOutlined />
-        </button>
+        <div className="work-content-top">
+          <h3 className="work-title">{title.replace("-", " ")}</h3>
+          <button
+            type="button"
+            className="modal-close-btn"
+            onClick={() => {
+              setWorkName(null);
+              dispatch(modal.isOpen(false));
+            }}
+          >
+            <HighlightOffOutlined />
+          </button>
+        </div>
         <div className="work-content-box">
           <h4>Description</h4>
           <p>{content?.detail}</p>
