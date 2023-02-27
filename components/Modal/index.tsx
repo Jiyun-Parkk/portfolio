@@ -1,7 +1,7 @@
 import { Container } from "./style";
 import { AnimatePresence } from "framer-motion";
 import { useAppSelector } from "hooks";
-import { GitHub, HighlightOffOutlined, LinkOutlined, RateReview } from "@mui/icons-material";
+import { GitHub, HighlightOffOutlined, Link, LinkOutlined, RateReview } from "@mui/icons-material";
 import workContents, { WorkType } from "./data";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useAppDispatch } from "hooks";
@@ -58,10 +58,12 @@ export const Modal = ({ title, setWorkName }: ModalProps) => {
             </li>
           </ul>
         </div>
+
         <div className="work-content-box">
           <h4>Used Skills</h4>
           <p>{content?.stack}</p>
         </div>
+
         <div className="work-content-box">
           <h4>Points</h4>
           <ul>
@@ -70,6 +72,24 @@ export const Modal = ({ title, setWorkName }: ModalProps) => {
             ))}
           </ul>
         </div>
+
+        {content?.report && (
+          <div className="work-content-box report">
+            <h4>Report</h4>
+            <small>아래 리스트를 클릭하시면 관련 링크로 이동합니다</small>
+            <ul>
+              {content.report.map((report) => (
+                <li key={report.title}>
+                  <a href={report.link} target="_blank" rel="referrer noreferrer">
+                    <h5>{report.title}</h5>
+                    <Link />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div className="work-content-box">
           <h4>Source</h4>
           <div className="source-box">

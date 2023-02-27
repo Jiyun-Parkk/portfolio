@@ -1,18 +1,19 @@
-import 'styled-components'
+import "styled-components";
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     background: {
-      basic: string
-      lighter: string
-      gray: string
-      mobileNav: string
-      bannerTitle: string
-      bannerContent: string
-    }
+      basic: string;
+      lighter: string;
+      gray: string;
+      mobileNav: string;
+      bannerTitle: string;
+      bannerContent: string;
+    };
     text: {
-      basic: string
-      point: string
-    }
+      basic: string;
+      point: string;
+      link: string;
+    };
   }
 }

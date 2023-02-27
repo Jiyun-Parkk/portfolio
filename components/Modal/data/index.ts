@@ -12,27 +12,53 @@ export interface WorkType {
     notion?: string;
     npm?: string;
   };
+  report?: {
+    title: string;
+    link: string;
+  }[];
 }
 
 interface WorksType {
-  [key: string]: {
-    detail: string;
-    contribution: {
-      team: string;
-      contribute: string;
-    };
-    stack: string;
-    point: string[];
-    source: {
-      git: string;
-      link?: string;
-      notion?: string;
-      npm?: string;
-    };
-  };
+  [key: string]: WorkType;
 }
 
 const workContents: WorksType = {
+  ["룰루트레이닝"]: {
+    detail:
+      "집에서도 쉽고 재미있게 필라테스를 할 수 있도록 도와주는 '필라테스 트레이닝' 서비스 입니다. 서비스 컨셉과 디자인은 필라테스 운동복 브랜드인 '룰루'에서 벤치마킹 하여, '룰루'브랜드에서 출시한 서비스인 것 처럼 고안 해보았습니다. 이제는 필라테스도 검증된 강사의 영상을 보고 집에서 편하게 운동해 볼 수 있습니다. 운동을 완료하면 기준에 따라 완료 뱃지를 수여하고, 일일 소모 칼로리를 계산해주어 더 적극적으로 운동 할 수 있도록 동기부여를 해줍니다.",
+    contribution: {
+      team: "4인 팀프로젝트 (프론트개발자 3명 , 기획자 1명)",
+      contribute: "기획 50% 회원가입기능 구현 100%",
+    },
+    stack: "NextJS , Typescript, Recoil, React-query, Styled-components, Firebase",
+    point: [
+      "재사용 가능한 컴포넌트를 간단한 코드로 구현하기 위해 지속적인 코드 리뷰 진행",
+      "사용자 편의를 고려한 UI/UX 기획",
+      "NextJS / Typescript 병행 사용",
+      "Recoil로 전역 상태관리",
+      "Firebase Auth 활용하여 로그인/회원가입 기능 구현",
+      "Firebase Database 활용하여 유저 세부정보 저장",
+    ],
+    report: [
+      {
+        title: "로그인 인증체크 로직",
+        link: "https://june-dev.vercel.app/blog/next-js/nextjs-firebase",
+      },
+      {
+        title: "EventTarget 속성 error 해결",
+        link: "https://june-dev.vercel.app/blog/react/errors/formTypeerror",
+      },
+      {
+        title: "Recoil hydrate error 해결",
+        link: "https://github.com/lulutraining/lulutraining/issues/66",
+      },
+    ],
+    source: {
+      git: "https://github.com/lulutraining/lulutraining",
+      link: "",
+      notion: "https://lulutraining.notion.site/22d39bd0360940d3bcddd177cbd3141d",
+    },
+  },
   ["Coin-Tracker"]: {
     detail:
       "Coinpaprika에서 무료로 제공 되는 API를 가공하여 1위~100위까지의 코인 리스트들을 보여주고, 개별 코인 페이지에서는 현재 가격 그래프와 시장 상황을 확인 해볼 수 있습니다.",
@@ -67,28 +93,6 @@ const workContents: WorksType = {
     source: {
       git: "https://github.com/jiyun-par/portfolio",
       link: "june-portfolio.vercel.app",
-    },
-  },
-  ["Oz-Training"]: {
-    detail:
-      "홈트족을 돕기위한 운동동기부여 서비스 입니다. 프로젝트 리딩 경험, 팀협업 경험을 쌓기 위해 직접 팀 빌딩을 하여 프로젝트를 리딩 하고 있습니다.",
-    contribution: {
-      team: "4인 팀프로젝트 (프론트개발자 3명 , 기획자 1명)",
-      contribute: "기획 50% 회원가입기능 구현 100%",
-    },
-    stack: "NextJS , Typescript, Recoil, React-query, Styled-components, Firebase",
-    point: [
-      "재사용 가능한 컴포넌트를 간단한 코드로 구현하기 위해 지속적인 코드 리뷰 진행",
-      "사용자 편의를 고려한 UI/UX 기획",
-      "NextJS / Typescript 병행 사용",
-      "Recoil로 전역 상태관리",
-      "Firebase Auth 활용하여 로그인/회원가입 기능 구현",
-      "Firebase Database 활용하여 유저 세부정보 저장",
-    ],
-    source: {
-      git: "https://github.com/Oz-Training-Club/oz-training",
-      link: "",
-      notion: "https://oz-training.notion.site/22d39bd0360940d3bcddd177cbd3141d",
     },
   },
   ["Export-JSON"]: {

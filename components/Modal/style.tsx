@@ -93,11 +93,27 @@ export const Container = styled(motion.div)<{ isdark: string }>`
         }
       }
     }
+
+    &.report {
+      small {
+        font-size: 0.8rem;
+      }
+      ul {
+        li {
+          a {
+            gap: 10px;
+            align-items: center;
+            justify-items: center;
+            display: flex;
+            color: ${({ theme }) => theme.text.link};
+          }
+        }
+      }
+    }
   }
 
   @media (max-width: 750px) {
     width: 90%;
     left: 5%;
-    /*padding: 20px;*/
   }
 `;
