@@ -59,6 +59,26 @@ const workContents: WorksType = {
       notion: "https://lulutraining.notion.site/22d39bd0360940d3bcddd177cbd3141d",
     },
   },
+  ["Juju-Weather"]: {
+    detail:
+      "제주도의 도시별 날씨를 확인하고, 날씨에 따른 옷차림을 추천해드립니다. 그리고 따로 검색하지 않아도 제주도의 핫 플레이스의 리스트를 한번에 볼 수 있습니다. 뿐만 아니라 한라산 코스별 입하산 허용시간 정보를 알려드립니다.",
+    contribution: {
+      team: "2인 팀프로젝트 (프론트개발자 2명)",
+      contribute: "날씨에 따른 옷차림 추천 기능 구현 / 프론트개발 기여도 60%",
+    },
+    stack: "ReactJS , Typescript, Redux, Redux-tookit",
+    point: [
+      "반응형 제작 mobile / laptop / desktop",
+      "darkmode / lightmode 구현",
+      "ReactJS / Typescript 병행 사용",
+      "Redux/Redux-tookit으로 전역 상태관리",
+      "Redux-tookit Thunk로 API pending 전 로딩 상태 구현",
+    ],
+    source: {
+      git: "https://github.com/jeju-weather/jeju-weather",
+      link: "",
+    },
+  },
   ["Coin-Tracker"]: {
     detail:
       "Coinpaprika에서 무료로 제공 되는 API를 가공하여 1위~100위까지의 코인 리스트들을 보여주고, 개별 코인 페이지에서는 현재 가격 그래프와 시장 상황을 확인 해볼 수 있습니다.",

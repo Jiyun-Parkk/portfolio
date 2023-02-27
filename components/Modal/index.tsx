@@ -18,7 +18,7 @@ export const Modal = ({ title, setWorkName }: ModalProps) => {
   const isDark = useAppSelector((state) => state.theme.value);
   const dispatch = useAppDispatch();
   const [content, setContent] = useState<WorkType | null>(null);
-
+  console.log(workContents[title]);
   useEffect(() => {
     setContent(workContents[title]);
   }, [title]);
