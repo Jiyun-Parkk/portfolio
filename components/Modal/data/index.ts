@@ -93,8 +93,8 @@ const workContents: WorksType = {
       "Code spliting을 하며 지속적인 리팩토링 진행",
     ],
     source: {
-      git: "https://github.com/jiyun-par/coin-tracker",
-      link: "https://jiyun-par.github.io/coin-tracker/",
+      git: "https://github.com/Jiyun1937/coin-tracker",
+      link: "https://jiyun1937.github.io/coin-tracker/",
     },
   },
   ["Portfolio"]: {
@@ -111,7 +111,7 @@ const workContents: WorksType = {
       "Redux Selector, Dispatch custom hook 생성으로 편리하게 호출",
     ],
     source: {
-      git: "https://github.com/jiyun-par/portfolio",
+      git: "https://github.com/Jiyun1937/portfolio",
       link: "june-portfolio.vercel.app",
     },
   },
@@ -133,7 +133,7 @@ const workContents: WorksType = {
       "작업자의 작업 편의성 및 작업속도 50%이상 향상",
     ],
     source: {
-      git: "https://github.com/jiyun-par/export-json-module",
+      git: "https://github.com/Jiyun1937/export-json-module",
       npm: "https://www.npmjs.com/package/create-export-json",
     },
   },

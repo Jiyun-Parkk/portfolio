@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <Container isdark={isDark}>
       <div className="footer__links">
-        <a href="https://github.com/jiyun-par" rel="noreferrer" target="_blank">
+        <a href="https://github.com/Jiyun1937/" rel="noreferrer" target="_blank">
           <GitHub />
         </a>
         <a
