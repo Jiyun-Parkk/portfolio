@@ -79,24 +79,24 @@ const workContents: WorksType = {
       link: "",
     },
   },
-  ["Coin-Tracker"]: {
-    detail:
-      "Coinpaprika에서 무료로 제공 되는 API를 가공하여 1위~100위까지의 코인 리스트들을 보여주고, 개별 코인 페이지에서는 현재 가격 그래프와 시장 상황을 확인 해볼 수 있습니다.",
-    contribution: { team: "1인 개인 프로젝트", contribute: "100%" },
-    stack: "React , Typescript, Recoil, React-query, Styled-components",
-    point: [
-      "styled-components 라이브러리로 Dark / Light 모드 구현",
-      "React / Typescript 병행 사용",
-      "Chart.js 라이브러리로 데이터 시각화 구현",
-      "Recoil로 전역 상태관리",
-      "React-query 사용으로 Api data 캐싱, 불필요한 데이터 호출 방지",
-      "Code spliting을 하며 지속적인 리팩토링 진행",
-    ],
-    source: {
-      git: "https://github.com/Jiyun1937/coin-tracker",
-      link: "https://jiyun1937.github.io/coin-tracker/",
-    },
-  },
+  //["Coin-Tracker"]: {
+  //  detail:
+  //    "Coinpaprika에서 무료로 제공 되는 API를 가공하여 1위~100위까지의 코인 리스트들을 보여주고, 개별 코인 페이지에서는 현재 가격 그래프와 시장 상황을 확인 해볼 수 있습니다.",
+  //  contribution: { team: "1인 개인 프로젝트", contribute: "100%" },
+  //  stack: "React , Typescript, Recoil, React-query, Styled-components",
+  //  point: [
+  //    "styled-components 라이브러리로 Dark / Light 모드 구현",
+  //    "React / Typescript 병행 사용",
+  //    "Chart.js 라이브러리로 데이터 시각화 구현",
+  //    "Recoil로 전역 상태관리",
+  //    "React-query 사용으로 Api data 캐싱, 불필요한 데이터 호출 방지",
+  //    "Code spliting을 하며 지속적인 리팩토링 진행",
+  //  ],
+  //  source: {
+  //    git: "https://github.com/Jiyun-Parkk/coin-tracker",
+  //    link: "https://jiyun1937.github.io/coin-tracker/",
+  //  },
+  //},
   ["Portfolio"]: {
     detail:
       "개인 이력과 작업물들을 보여주는 페이지입니다. 포트폴리오인 만큼 Next.js를 활용하여 SEO 최적화에 신경썼습니다.",
@@ -111,7 +111,7 @@ const workContents: WorksType = {
       "Redux Selector, Dispatch custom hook 생성으로 편리하게 호출",
     ],
     source: {
-      git: "https://github.com/Jiyun1937/portfolio",
+      git: "https://github.com/Jiyun-Parkk/portfolio",
       link: "june-portfolio.vercel.app",
     },
   },
@@ -133,7 +133,7 @@ const workContents: WorksType = {
       "작업자의 작업 편의성 및 작업속도 50%이상 향상",
     ],
     source: {
-      git: "https://github.com/Jiyun1937/export-json-module",
+      git: "https://github.com/Jiyun-Parkk/export-json-module",
       npm: "https://www.npmjs.com/package/create-export-json",
     },
   },
