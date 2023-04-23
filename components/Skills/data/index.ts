@@ -12,7 +12,7 @@ const stackList = [
   {
     title: "Javascript",
     background: "#FF9E0F",
-    point: ["ES6문법 사용", "다양한 배열 메소드를 활용"],
+    point: ["ES6문법 사용", "기초에 대한 탄탄한 이해"],
   },
   {
     title: "Typescript",
@@ -22,12 +22,12 @@ const stackList = [
   {
     title: "React",
     background: "#61DAFB",
-    point: ["SPA, MPA에 대한 이해", "UI의 컴포넌트화 대한 깊은 고민"],
+    point: ["SPA, MPA에 대한 이해", "UI의 컴포넌트화"],
   },
   {
     title: "Next.js",
     background: "#000000",
-    point: ["SSR, CSR에 대한 이해", "Next.js의 필요성 숙지"],
+    point: ["SSR, CSR에 대한 이해", "Next.js의 내장 API 적극활용"],
   },
   {
     title: "Recoil",

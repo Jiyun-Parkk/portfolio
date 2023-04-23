@@ -9,6 +9,7 @@ import { ShowupMotion } from "motion";
 export const Works = () => {
   const [workName, setWorkName] = useState<string | null>(null);
   const workList = [
+    { title: "Chat Dog", thumb: "/static/chatdog.png" },
     { title: "룰루트레이닝", thumb: "/static/lulutraining.png" },
     { title: "Juju-Weather", thumb: "/static/jejuweather.png" },
     //{ title: "Coin-Tracker", thumb: "/static/cointracker.png" },

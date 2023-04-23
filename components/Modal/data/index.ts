@@ -23,6 +23,24 @@ interface WorksType {
 }
 
 const workContents: WorksType = {
+  ["Chat Dog"]: {
+    detail:
+      "Chatgpt API를 활용하여 여러가지 분야를 상담해주는 서비스 입니다. 생년월일을 기재하여 운세를 봐주는 포춘독, 요리법을 알려주는 레시피독, 다이어트 식단을 짜주는 칼로리독, 다양한 주류 정보를 알려주는 드렁큰독이 있습니다.",
+    contribution: {
+      team: "1인 개인 프로젝트",
+      contribute: "100%",
+    },
+    stack: "NextJS , Typescript, Recoil, Styled-components",
+    point: [
+      "Next.JS로 SEO 최적화",
+      "Chatgpt API 활용으로 최신 기술 적용 경험",
+      "Next.JS 내장 API 구현으로 chat 기능 구현",
+    ],
+    source: {
+      git: "https://github.com/Jiyun-Parkk/chatDog",
+      link: "https://aichatdog.com/",
+    },
+  },
   ["룰루트레이닝"]: {
     detail:
       "집에서도 쉽고 재미있게 필라테스를 할 수 있도록 도와주는 '필라테스 트레이닝' 서비스 입니다. 서비스 컨셉과 디자인은 필라테스 운동복 브랜드인 '룰루'에서 벤치마킹 하여, '룰루'브랜드에서 출시한 서비스인 것 처럼 고안 해보았습니다. 이제는 필라테스도 검증된 강사의 영상을 보고 집에서 편하게 운동해 볼 수 있습니다. 운동을 완료하면 기준에 따라 완료 뱃지를 수여하고, 일일 소모 칼로리를 계산해주어 더 적극적으로 운동 할 수 있도록 동기부여를 해줍니다.",
@@ -76,7 +94,7 @@ const workContents: WorksType = {
     ],
     source: {
       git: "https://github.com/jeju-weather/jeju-weather",
-      link: "",
+      link: "https://jeju-weather.github.io/jeju-weather/",
     },
   },
   //["Coin-Tracker"]: {
@@ -103,8 +121,8 @@ const workContents: WorksType = {
     contribution: { team: "1인 개인 프로젝트", contribute: "100%" },
     stack: "NextJS , Typescript, Redux, Styled-components, MUI, Framer-motion",
     point: [
+      "useAxios 훅으로 api fetch 간편화",
       "styled-components 라이브러리로 Dark / Light 모드 구현",
-      "meterial-ui로 감각적인 디자인",
       "NextJS / Typescript 병행 사용",
       "Redux로 전역 상태 관리",
       "Framer-motion 활용하여 모션 적용",
