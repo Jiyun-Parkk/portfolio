@@ -86,6 +86,7 @@ const workContents: WorksType = {
     },
     stack: "ReactJS , Typescript, Redux, Redux-tookit",
     point: [
+      "useAxios 훅으로 api fetch 간편화",
       "반응형 제작 mobile / laptop / desktop",
       "darkmode / lightmode 구현",
       "ReactJS / Typescript 병행 사용",
@@ -121,7 +122,6 @@ const workContents: WorksType = {
     contribution: { team: "1인 개인 프로젝트", contribute: "100%" },
     stack: "NextJS , Typescript, Redux, Styled-components, MUI, Framer-motion",
     point: [
-      "useAxios 훅으로 api fetch 간편화",
       "styled-components 라이브러리로 Dark / Light 모드 구현",
       "NextJS / Typescript 병행 사용",
       "Redux로 전역 상태 관리",
