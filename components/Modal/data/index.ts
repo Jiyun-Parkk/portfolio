@@ -47,7 +47,7 @@ const workContents: WorksType = {
     report: [
       {
         title: "슈룹 회고1 - 기획 및 브레인스토밍",
-        link: "https://www.junedevblog.com/blog/woori-fisa/final-project-1e",
+        link: "https://www.junedevblog.com/blog/woori-fisa/final-project-1",
       },
       {
         title: "슈룹 회고2 - 화면설계서 작성 및 ERD 설계",
