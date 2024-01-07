@@ -23,7 +23,7 @@ interface WorksType {
 }
 
 const workContents: WorksType = {
-  ["Shroop"]: {
+  ["슈룹"]: {
     detail: `슈룹은 안전거래를 할 수 있는 중고거래 플랫폼입니다. <br />슈룹이 생각하는 안전거래는 아래와 같습니다.<br /><br />☝️ 직거래가 아닌 비대면 온라인 거래를 한다.<br />☝️ 비대면 거래지만 신뢰성 있는 상품을 구매할 수 있다.<br />☝️ 비대면 거래지만 신뢰성 있는 금전 거래를 할 수 있다`,
     contribution: {
       team: "4인 개인 프로젝트",
