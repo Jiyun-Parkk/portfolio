@@ -7,12 +7,14 @@ export const Container = styled.section<{ isdark: boolean }>`
     line-height: 2;
   }
   .about__works-container {
-    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 40px;
 
     @media (max-width: 1200px) {
+      display: flex;
       flex-direction: column;
     }
   }
@@ -21,9 +23,10 @@ export const Container = styled.section<{ isdark: boolean }>`
 export const WorkList = styled(motion.li)<{ thumb: string }>`
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 300px;
   height: 400px;
   background: ${(props) => `url(${props.thumb}) no-repeat center / cover`};
   border-radius: 20px;

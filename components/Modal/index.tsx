@@ -45,7 +45,7 @@ export const Modal = ({ title, setWorkName }: ModalProps) => {
         </div>
         <div className="work-content-box">
           <h4>Description</h4>
-          <p>{content?.detail}</p>
+          <p dangerouslySetInnerHTML={{ __html: content?.detail ? content.detail : "" }}></p>
         </div>
         <div className="work-content-box">
           <h4>Contribution</h4>
@@ -61,7 +61,7 @@ export const Modal = ({ title, setWorkName }: ModalProps) => {
 
         <div className="work-content-box">
           <h4>Used Skills</h4>
-          <p>{content?.stack}</p>
+          <p dangerouslySetInnerHTML={{ __html: content?.stack ? content?.stack : "" }}></p>
         </div>
 
         <div className="work-content-box">

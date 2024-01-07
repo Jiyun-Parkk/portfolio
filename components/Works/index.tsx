@@ -9,11 +9,13 @@ import { ShowupMotion } from "motion";
 export const Works = () => {
   const [workName, setWorkName] = useState<string | null>(null);
   const workList = [
+    { title: "Shroop", thumb: "/static/shroop.gif" },
+    { title: "Late Pass", thumb: "/static/latepass.gif" },
     { title: "Chat Dog", thumb: "/static/chatdog.png" },
     { title: "룰루트레이닝", thumb: "/static/lulutraining.png" },
     { title: "Juju-Weather", thumb: "/static/jejuweather.png" },
     //{ title: "Coin-Tracker", thumb: "/static/cointracker.png" },
-    { title: "Portfolio", thumb: "/static/portfolio.png" },
+    // { title: "Portfolio", thumb: "/static/portfolio.png" },
     { title: "Export-JSON", thumb: "/static/jsonExport.png" },
   ];
   const isDark = useAppSelector((state) => state.theme.value);

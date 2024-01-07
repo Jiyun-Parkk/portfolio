@@ -3,8 +3,8 @@ const timeline = [
     title: "Education",
     list: [
       {
-        date: "2022.09 - 재학중",
-        history: "방송통신대학교 컴퓨터과학과 편입",
+        date: "2023.04 - 2023.09",
+        history: "우리FISA 클라우드 서비스 개발 교육 수료(풀스택 개발)",
       },
       {
         date: "2020.10 - 2021.03",
