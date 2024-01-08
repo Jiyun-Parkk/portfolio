@@ -26,8 +26,8 @@ const workContents: WorksType = {
   ["슈룹"]: {
     detail: `슈룹은 안전거래를 할 수 있는 중고거래 플랫폼입니다. <br />슈룹이 생각하는 안전거래는 아래와 같습니다.<br /><br />☝️ 직거래가 아닌 비대면 온라인 거래를 한다.<br />☝️ 비대면 거래지만 신뢰성 있는 상품을 구매할 수 있다.<br />☝️ 비대면 거래지만 신뢰성 있는 금전 거래를 할 수 있다`,
     contribution: {
-      team: "4인 개인 프로젝트",
-      contribute: "25%",
+      team: "4인 팀 프로젝트",
+      contribute: "프론트엔드 70%, 백엔드 25%, 인프라 60%",
     },
     stack: `Frontend: Vue.js, Vuetify, Pinia<br /> Backend: Spring boot, Gradle, JPA <br /> Test: cypress <br /> Infra: AWS EC2, RDS, S3`,
     point: [
@@ -65,8 +65,8 @@ const workContents: WorksType = {
   ["Late Pass"]: {
     detail: `우리FISA 클라우드 서비스 개발 교육생은 지각을 하면 노래를 불러야 합니다.<br />노래 부르기를 피하기 위해서는 강사님이 만든 개발 퀴즈를 맞추고 지각면제권을 얻어야 합니다. <br />우리FISA 교육생들의 지각면제권을 발급하기 위한 개발퀴즈 플랫폼입니다.`,
     contribution: {
-      team: "4인 개인 프로젝트",
-      contribute: "25%",
+      team: "4인 팀 프로젝트",
+      contribute: "프론트엔드 100%, 백엔드 25%, 인프라 30%",
     },
     stack: `Frontend: Vue.js, Vuetify, Pinia<br />Backend: Spring boot, JPA<br /> Infra: EC2, RDS`,
     point: [
