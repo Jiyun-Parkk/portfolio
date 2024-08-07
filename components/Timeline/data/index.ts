@@ -17,6 +17,10 @@ const timeline = [
 
     list: [
       {
+        date: "2023.12 - 재직중",
+        history: "쌍용정보통신 전략PO 근무",
+      },
+      {
         date: "2021.05 - 2022.06",
         history: "아이엠폼 퍼블리셔 근무",
       },

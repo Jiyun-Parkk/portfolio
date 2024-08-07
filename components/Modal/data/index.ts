@@ -93,7 +93,7 @@ const workContents: WorksType = {
     ],
     source: {
       git: "https://github.com/Jiyun-Parkk/chatDog",
-      link: "https://aichatdog.com/",
+      link: "https://chat-dog-eight.vercel.app/",
     },
   },
   ["룰루트레이닝"]: {

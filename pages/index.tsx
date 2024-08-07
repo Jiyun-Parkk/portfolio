@@ -5,7 +5,7 @@ const Home = () => {
     <>
       <SEO />
       <Intro />
-      <Skills />
+      {/* <Skills /> */}
       <Timelines />
       <Works />
     </>
