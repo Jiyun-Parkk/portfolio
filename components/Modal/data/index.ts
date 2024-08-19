@@ -47,15 +47,15 @@ const workContents: WorksType = {
     report: [
       {
         title: "슈룹 회고1 - 기획 및 브레인스토밍",
-        link: "https://www.junedevblog.com/blog/woori-fisa/final-project-1",
+        link: "https://dev-blog-git-master-jiyun-par.vercel.app/blog/woori-fisa/final-project-1",
       },
       {
         title: "슈룹 회고2 - 화면설계서 작성 및 ERD 설계",
-        link: "https://www.junedevblog.com/blog/woori-fisa/final-project-2",
+        link: "https://dev-blog-git-master-jiyun-par.vercel.app/blog/woori-fisa/final-project-2",
       },
       {
         title: "슈룹 회고 3 - 화면 완료, 403에러 해결",
-        link: "https://www.junedevblog.com/blog/woori-fisa/final-project-4",
+        link: "https://dev-blog-git-master-jiyun-par.vercel.app/blog/woori-fisa/final-project-4",
       },
     ],
     source: {
