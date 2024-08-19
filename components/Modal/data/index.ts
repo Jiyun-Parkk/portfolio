@@ -114,11 +114,11 @@ const workContents: WorksType = {
     report: [
       {
         title: "로그인 인증체크 로직",
-        link: "https://june-dev.vercel.app/blog/next-js/nextjs-firebase",
+        link: "https://dev-blog-git-master-jiyun-par.vercel.app/blog/next-js/nextjs-firebase",
       },
       {
         title: "EventTarget 속성 error 해결",
-        link: "https://june-dev.vercel.app/blog/react/errors/formTypeerror",
+        link: "https://dev-blog-git-master-jiyun-par.vercel.app/blog/react/errors/formTypeerror",
       },
       {
         title: "Recoil hydrate error 해결",
